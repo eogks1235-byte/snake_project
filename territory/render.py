@@ -36,9 +36,9 @@ class Renderer:
         self.grid_w = sim.grid.width * cell_size
         self.grid_h = sim.grid.height * cell_size
 
-        # 사이드바: 한 줄 42px + 위/아래 여백 30px씩
+        # 사이드바 없음 — 영토 위에 직접 라벨 표시. 격자 아래 약간의 패딩만.
         if sidebar_height is None:
-            sidebar_height = len(agents) * 42 + 40
+            sidebar_height = 30
 
         self.margin_x = margin_x
         self.window_w = self.grid_w + 2 * margin_x
@@ -47,6 +47,8 @@ class Renderer:
         self.grid_x = margin_x
         self.grid_y = header_height
         self.sidebar_y = self.grid_y + self.grid_h + 24
+
+        self._label_fonts: dict = {}
 
         pygame.init()
         self.screen = pygame.display.set_mode((self.window_w, self.window_h))
@@ -84,8 +86,69 @@ class Renderer:
         self.screen.fill(BG_COLOR)
         self._draw_header(fast_forward)
         self._draw_grid_panel()
-        self._draw_sidebar()
+        self._draw_area_labels()
         pygame.display.flip()
+
+    def _get_label_font(self, size: int):
+        if size not in self._label_fonts:
+            self._label_fonts[size] = pygame.font.SysFont(
+                'arial,malgungothic', size, bold=True)
+        return self._label_fonts[size]
+
+    def _blit_text_outline(self, text, font, pos,
+                            color=(255, 255, 255), outline=(0, 0, 0)):
+        rendered = font.render(text, True, color)
+        shadow = font.render(text, True, outline)
+        x, y = pos
+        for dx, dy in ((-2, -2), (-2, 0), (-2, 2), (0, -2),
+                       (0, 2), (2, -2), (2, 0), (2, 2)):
+            self.screen.blit(shadow, (x + dx, y + dy))
+        self.screen.blit(rendered, (x, y))
+
+    def _draw_area_labels(self):
+        """5% 이상 점유한 에이전트의 영토 무게중심에 [이름 + %] 라벨."""
+        cells = self.sim.grid.cells
+        total = self.sim.grid.total_cells()
+        areas = self.sim.get_areas()
+        cs = self.cell_size
+
+        for agent in self.agents:
+            area = areas.get(agent.id, 0)
+            pct = 100.0 * area / total if total else 0
+            if pct < 5.0:
+                continue
+
+            ys, xs = (cells == agent.id).nonzero()
+            if len(xs) == 0:
+                continue
+
+            # centroid → 가장 가까운 자기 영토 칸 (라벨이 자기 색 위에 있도록)
+            cx_g = float(xs.mean())
+            cy_g = float(ys.mean())
+            dists = (xs - cx_g) ** 2 + (ys - cy_g) ** 2
+            i = int(dists.argmin())
+            gx, gy = int(xs[i]), int(ys[i])
+
+            px = self.grid_x + gx * cs + cs // 2
+            py = self.grid_y + gy * cs + cs // 2
+
+            # 폰트 크기: 영토 크기에 비례
+            big_size = int(min(54, max(22, 16 + (area ** 0.5) * 0.9)))
+            small_size = max(11, int(big_size * 0.42))
+            big = self._get_label_font(big_size)
+            small = self._get_label_font(small_size)
+
+            pct_text = f'{pct:.0f}%'
+            name_text = agent.name
+            pct_w, pct_h = big.size(pct_text)
+            name_w, name_h = small.size(name_text)
+
+            # 위: 이름, 아래: 큰 비율
+            name_pos = (px - name_w // 2, py - pct_h // 2 - name_h - 2)
+            pct_pos = (px - pct_w // 2, py - pct_h // 2)
+
+            self._blit_text_outline(name_text, small, name_pos)
+            self._blit_text_outline(pct_text, big, pct_pos)
 
     def _draw_header(self, fast_forward: bool):
         title = self.font_title.render('TERRITORY WAR', True, TEXT_PRIMARY)
