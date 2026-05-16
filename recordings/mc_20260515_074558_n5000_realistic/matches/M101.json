@@ -1,0 +1,271 @@
+{
+  "match_id": "M101",
+  "stage": "SF",
+  "home": {
+    "code": "NOR",
+    "iso2": "NO",
+    "name": "Norway",
+    "formation": "4-4-2",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 76,
+    "attack": 78,
+    "defense": 78,
+    "midfield": 77,
+    "keeper": 73,
+    "goals": 2
+  },
+  "away": {
+    "code": "BEL",
+    "iso2": "BE",
+    "name": "Belgium",
+    "formation": "4-3-3",
+    "style_tag": "possession",
+    "wc_titles": 0,
+    "overall": 84,
+    "attack": 81,
+    "defense": 85,
+    "midfield": 86,
+    "keeper": 86,
+    "goals": 1
+  },
+  "score": {
+    "home": 2,
+    "away": 1,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "NOR",
+    "loser": "BEL"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 4,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 4,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 7,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR corner saved"
+    },
+    {
+      "minute": 15,
+      "kind": "goal",
+      "team": "BEL",
+      "text": "GOAL — Wout Faes (assist: Arthur Theate, BEL)"
+    },
+    {
+      "minute": 15,
+      "kind": "tactical",
+      "team": "NOR",
+      "text": "TACTIC (NOR) 4-3-3"
+    },
+    {
+      "minute": 24,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 34,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 34,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 37,
+      "kind": "goal",
+      "team": "NOR",
+      "text": "GOAL — Erling Haaland (assist: Sander Berge, NOR)"
+    },
+    {
+      "minute": 37,
+      "kind": "tactical",
+      "team": "NOR",
+      "text": "TACTIC (NOR) 5-3-2"
+    },
+    {
+      "minute": 37,
+      "kind": "tactical",
+      "team": "BEL",
+      "text": "TACTIC (BEL) 3-4-3"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 54,
+      "kind": "goal",
+      "team": "NOR",
+      "text": "GOAL — Erling Haaland (assist: Leo Ostigard, NOR)"
+    },
+    {
+      "minute": 54,
+      "kind": "tactical",
+      "team": "BEL",
+      "text": "TACTIC (BEL) 4-2-4"
+    },
+    {
+      "minute": 61,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Patrick Berg → Stefan Strandberg"
+    },
+    {
+      "minute": 61,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Arthur Theate → Dodi Lukebakio"
+    },
+    {
+      "minute": 63,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Mathias Normann → Birger Meling"
+    },
+    {
+      "minute": 64,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 67,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Leo Ostigard → Antonio Nusa"
+    },
+    {
+      "minute": 67,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 68,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 70,
+      "kind": "tactical",
+      "team": "NOR",
+      "text": "TACTIC (NOR) 4-1-4-1"
+    },
+    {
+      "minute": 70,
+      "kind": "tactical",
+      "team": "BEL",
+      "text": "TACTIC (BEL) 3-4-3"
+    },
+    {
+      "minute": 70,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 72,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Timothy Castagne → Charles De Ketelaere"
+    },
+    {
+      "minute": 74,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Jan Vertonghen → Michy Batshuayi"
+    },
+    {
+      "minute": 77,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 82,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Youri Tielemans → Leandro Trossard"
+    },
+    {
+      "minute": 82,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR FREE KICK"
+    },
+    {
+      "minute": 83,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Julian Ryerson → Mohamed Elyounoussi"
+    },
+    {
+      "minute": 83,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Amadou Onana → Zeno Debast"
+    },
+    {
+      "minute": 85,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR free_kick saved"
+    },
+    {
+      "minute": 87,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 90,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 97,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 97,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 99,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

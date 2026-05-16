@@ -1,6 +1,8 @@
 """아이템 시스템 — 효과 풀 15종에서 매 판 4개 활성화."""
 from dataclasses import dataclass
 
+from .grid import WALL
+
 DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]
 
 
@@ -57,7 +59,7 @@ def apply_effect(sim, agent_id: int, effect_key: str):
         for dy in range(-2, 3):
             for dx in range(-2, 3):
                 nx, ny = state.x + dx, state.y + dy
-                if grid.in_bounds(nx, ny):
+                if grid.in_bounds(nx, ny) and int(grid.cells[ny, nx]) != WALL:
                     grid.cells[ny, nx] = agent_id
 
     elif effect_key == 'teleport':
@@ -159,7 +161,8 @@ def apply_effect(sim, agent_id: int, effect_key: str):
         for dy in range(-3, 4):
             for dx in range(-3, 4):
                 nx, ny = state.x + dx, state.y + dy
-                if grid.in_bounds(nx, ny) and (nx, ny) != head:
+                if (grid.in_bounds(nx, ny) and (nx, ny) != head
+                        and int(grid.cells[ny, nx]) != WALL):
                     grid.cells[ny, nx] = 0
 
     elif effect_key == 'swap':

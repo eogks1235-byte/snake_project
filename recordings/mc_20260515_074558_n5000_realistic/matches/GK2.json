@@ -1,0 +1,277 @@
+{
+  "match_id": "GK2",
+  "stage": "GROUP K",
+  "home": {
+    "code": "POR",
+    "iso2": "PT",
+    "name": "Portugal",
+    "formation": "4-3-3",
+    "style_tag": "possession",
+    "wc_titles": 0,
+    "overall": 86,
+    "attack": 89,
+    "defense": 85,
+    "midfield": 85,
+    "keeper": 83,
+    "goals": 2
+  },
+  "away": {
+    "code": "UZB",
+    "iso2": "UZ",
+    "name": "Uzbekistan",
+    "formation": "5-4-1",
+    "style_tag": "parking-bus",
+    "wc_titles": 0,
+    "overall": 72,
+    "attack": 68,
+    "defense": 74,
+    "midfield": 71,
+    "keeper": 73,
+    "goals": 0
+  },
+  "score": {
+    "home": 2,
+    "away": 0,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "POR",
+    "loser": "UZB"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 1,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR shot, saved"
+    },
+    {
+      "minute": 1,
+      "kind": "setpiece",
+      "team": "POR",
+      "text": "POR CORNER"
+    },
+    {
+      "minute": 4,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR corner saved"
+    },
+    {
+      "minute": 8,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR shot, saved"
+    },
+    {
+      "minute": 8,
+      "kind": "setpiece",
+      "team": "POR",
+      "text": "POR CORNER"
+    },
+    {
+      "minute": 11,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR corner saved"
+    },
+    {
+      "minute": 26,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 34,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR shot, saved"
+    },
+    {
+      "minute": 37,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR shot, saved"
+    },
+    {
+      "minute": 37,
+      "kind": "setpiece",
+      "team": "POR",
+      "text": "POR CORNER"
+    },
+    {
+      "minute": 39,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR corner saved"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 53,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 53,
+      "kind": "setpiece",
+      "team": "UZB",
+      "text": "UZB CORNER"
+    },
+    {
+      "minute": 56,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB corner saved"
+    },
+    {
+      "minute": 59,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR shot, saved"
+    },
+    {
+      "minute": 60,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Sherzod Nasrullaev → Igor Sergeev"
+    },
+    {
+      "minute": 63,
+      "kind": "goal",
+      "team": "POR",
+      "text": "GOAL — Diogo Jota (assist: Nuno Mendes, POR)"
+    },
+    {
+      "minute": 63,
+      "kind": "tactical",
+      "team": "POR",
+      "text": "TACTIC (POR) 4-1-4-1"
+    },
+    {
+      "minute": 63,
+      "kind": "tactical",
+      "team": "UZB",
+      "text": "TACTIC (UZB) 4-4-2"
+    },
+    {
+      "minute": 66,
+      "kind": "sub",
+      "team": "POR",
+      "text": "SUB (POR) Joao Palhinha → Pepe"
+    },
+    {
+      "minute": 66,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Akmal Mozgovoy → Bobur Abdikholikov"
+    },
+    {
+      "minute": 68,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Farrukh Sayfiev → Khusayin Norchaev"
+    },
+    {
+      "minute": 73,
+      "kind": "sub",
+      "team": "POR",
+      "text": "SUB (POR) Joao Cancelo → Antonio Silva"
+    },
+    {
+      "minute": 74,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 76,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 76,
+      "kind": "setpiece",
+      "team": "UZB",
+      "text": "UZB CORNER"
+    },
+    {
+      "minute": 78,
+      "kind": "sub",
+      "team": "POR",
+      "text": "SUB (POR) Nuno Mendes → Joao Felix"
+    },
+    {
+      "minute": 78,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB corner saved"
+    },
+    {
+      "minute": 79,
+      "kind": "sub",
+      "team": "POR",
+      "text": "SUB (POR) Vitinha → Goncalo Ramos"
+    },
+    {
+      "minute": 80,
+      "kind": "tactical",
+      "team": "UZB",
+      "text": "TACTIC (UZB) 4-3-3"
+    },
+    {
+      "minute": 81,
+      "kind": "goal",
+      "team": "POR",
+      "text": "GOAL — Joao Felix (assist: Diogo Jota, POR)"
+    },
+    {
+      "minute": 84,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Rustamjon Ashurmatov → Jasurbek Yakhshiboev"
+    },
+    {
+      "minute": 88,
+      "kind": "sub",
+      "team": "POR",
+      "text": "SUB (POR) Rafael Leao → Otavio"
+    },
+    {
+      "minute": 90,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR shot, saved"
+    },
+    {
+      "minute": 90,
+      "kind": "setpiece",
+      "team": "POR",
+      "text": "POR CORNER"
+    },
+    {
+      "minute": 92,
+      "kind": "shot",
+      "team": "POR",
+      "text": "POR corner saved"
+    },
+    {
+      "minute": 93,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

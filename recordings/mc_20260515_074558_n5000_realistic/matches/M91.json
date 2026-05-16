@@ -1,0 +1,313 @@
+{
+  "match_id": "M91",
+  "stage": "R16",
+  "home": {
+    "code": "NED",
+    "iso2": "NL",
+    "name": "Netherlands",
+    "formation": "4-3-3",
+    "style_tag": "possession",
+    "wc_titles": 0,
+    "overall": 90,
+    "attack": 87,
+    "defense": 90,
+    "midfield": 92,
+    "keeper": 90,
+    "goals": 1
+  },
+  "away": {
+    "code": "SEN",
+    "iso2": "SN",
+    "name": "Senegal",
+    "formation": "4-2-3-1",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 79,
+    "attack": 78,
+    "defense": 76,
+    "midfield": 81,
+    "keeper": 81,
+    "goals": 0
+  },
+  "score": {
+    "home": 1,
+    "away": 0,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "NED",
+    "loser": "SEN"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 4,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN shot, saved"
+    },
+    {
+      "minute": 11,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN shot, saved"
+    },
+    {
+      "minute": 11,
+      "kind": "setpiece",
+      "team": "SEN",
+      "text": "SEN CORNER"
+    },
+    {
+      "minute": 13,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN corner saved"
+    },
+    {
+      "minute": 16,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN shot, saved"
+    },
+    {
+      "minute": 18,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN shot, saved"
+    },
+    {
+      "minute": 18,
+      "kind": "setpiece",
+      "team": "SEN",
+      "text": "SEN CORNER"
+    },
+    {
+      "minute": 21,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN corner saved"
+    },
+    {
+      "minute": 23,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 23,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 26,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 29,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 31,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN shot, saved"
+    },
+    {
+      "minute": 31,
+      "kind": "setpiece",
+      "team": "SEN",
+      "text": "SEN CORNER"
+    },
+    {
+      "minute": 34,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN corner saved"
+    },
+    {
+      "minute": 36,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 41,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 41,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 44,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 50,
+      "kind": "tactical",
+      "team": "SEN",
+      "text": "TACTIC (SEN) 5-3-2"
+    },
+    {
+      "minute": 53,
+      "kind": "tactical",
+      "team": "NED",
+      "text": "TACTIC (NED) 3-4-3"
+    },
+    {
+      "minute": 54,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN shot, saved"
+    },
+    {
+      "minute": 54,
+      "kind": "setpiece",
+      "team": "SEN",
+      "text": "SEN CORNER"
+    },
+    {
+      "minute": 57,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN corner saved"
+    },
+    {
+      "minute": 61,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 61,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 64,
+      "kind": "goal",
+      "team": "NED",
+      "text": "GOAL — Virgil van Dijk (assist: Wout Weghorst, NED)"
+    },
+    {
+      "minute": 64,
+      "kind": "tactical",
+      "team": "NED",
+      "text": "TACTIC (NED) 4-1-4-1"
+    },
+    {
+      "minute": 64,
+      "kind": "tactical",
+      "team": "SEN",
+      "text": "TACTIC (SEN) 4-3-3"
+    },
+    {
+      "minute": 69,
+      "kind": "sub",
+      "team": "SEN",
+      "text": "SUB (SEN) Abdou Diallo → Boulaye Dia"
+    },
+    {
+      "minute": 71,
+      "kind": "sub",
+      "team": "SEN",
+      "text": "SUB (SEN) Pathe Ciss → Nicolas Jackson"
+    },
+    {
+      "minute": 72,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Wout Weghorst → Stefan de Vrij"
+    },
+    {
+      "minute": 74,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Denzel Dumfries → Lutsharel Geertruida"
+    },
+    {
+      "minute": 74,
+      "kind": "sub",
+      "team": "SEN",
+      "text": "SUB (SEN) Youssouf Sabaly → Habib Diallo"
+    },
+    {
+      "minute": 78,
+      "kind": "sub",
+      "team": "SEN",
+      "text": "SUB (SEN) Krepin Diatta → Fode Ballo-Toure"
+    },
+    {
+      "minute": 80,
+      "kind": "tactical",
+      "team": "SEN",
+      "text": "TACTIC (SEN) 4-2-4"
+    },
+    {
+      "minute": 83,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Tijjani Reijnders → Donyell Malen"
+    },
+    {
+      "minute": 83,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN shot, saved"
+    },
+    {
+      "minute": 85,
+      "kind": "sub",
+      "team": "SEN",
+      "text": "SUB (SEN) Lamine Camara → Pape Abou Cisse"
+    },
+    {
+      "minute": 86,
+      "kind": "setpiece",
+      "team": "SEN",
+      "text": "SEN FREE KICK"
+    },
+    {
+      "minute": 89,
+      "kind": "shot",
+      "team": "SEN",
+      "text": "SEN free_kick saved"
+    },
+    {
+      "minute": 91,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 94,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "description": "실제 2026 월드컵 경기 결과를 입력하면 시뮬에서 그 결과를 고정으로 사용. 비어 있는 results는 시뮬레이터가 채움.",
+    "match_id_format": {
+      "groups":   "GA1~GA6 / GB1~GB6 / ... / GL1~GL6  (12조 × 6경기 = 72)",
+      "knockout": "M73~M88(R32) / M89~M96(R16) / M97~M100(QF) / M101~M102(SF) / M103(3위전) / M104(결승)"
+    },
+    "entry_format": {
+      "match_id": {
+        "home":       "(optional) 홈팀 코드 검증용",
+        "away":       "(optional) 원정팀 코드 검증용",
+        "home_goals": "정규시간 홈 득점",
+        "away_goals": "정규시간 원정 득점",
+        "pk_home":    "(optional) PK 홈 득점 — knockout 무승부 시",
+        "pk_away":    "(optional) PK 원정 득점"
+      }
+    },
+    "examples": {
+      "GA1_finished": {"home_goals": 2, "away_goals": 1},
+      "M97_pk":      {"home_goals": 1, "away_goals": 1, "pk_home": 5, "pk_away": 4}
+    },
+    "usage": "python soccer/main.py --real soccer/real_results.json --mc 5000"
+  },
+  "results": {
+  }
+}

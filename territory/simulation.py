@@ -7,6 +7,7 @@ from typing import List, Optional
 from .grid import Grid
 from .agents import Agent, AgentState, DIRECTIONS
 from .items import Item, EffectFlash, ALL_EFFECTS, EFFECT_META, apply_effect
+from .maps import resolve_map
 
 
 ITEM_TARGET = 4
@@ -19,6 +20,7 @@ class GameContext:
     areas: dict
     grid: Grid
     rng: random.Random
+    items: list  # 현재 맵 위 아이템 (Item 객체 리스트)
 
     def get_ranking(self) -> list:
         return sorted(self.areas.items(), key=lambda x: -x[1])
@@ -42,11 +44,16 @@ class GameContext:
 
 class Simulation:
     def __init__(self, agents: List[Agent], width: int = 60, height: int = 60,
-                 seed: int = 42, randomize_start: bool = True):
+                 seed: int = 42, randomize_start: bool = True,
+                 map_preset: str = None):
         self.grid = Grid(width, height)
         self.agents = agents
         self.tick = 0
         self.rng = random.Random(seed)
+
+        # 맵 프리셋 — 이름 지정 시 그것, 아니면 랜덤
+        self.map_name, build_map = resolve_map(map_preset, self.rng)
+        self.grid.add_walls(build_map(width, height, self.rng))
 
         if randomize_start:
             starts = self._random_quadrant_starts(len(agents), margin=4)
@@ -79,7 +86,10 @@ class Simulation:
         self._spawn_items(ITEM_TARGET)
 
     def _random_quadrant_starts(self, n_agents: int, margin: int = 4):
-        """격자를 cols×rows 셀로 분할, 셀을 무작위로 섞어 한 명씩 배치."""
+        """격자를 cols×rows 셀로 분할, 셀을 무작위로 섞어 한 명씩 배치.
+
+        벽 위 또는 이미 사용된 위치는 피해서 빈 칸을 고른다.
+        """
         w, h = self.grid.width, self.grid.height
         cols = max(1, math.ceil(math.sqrt(n_agents)))
         rows = max(1, math.ceil(n_agents / cols))
@@ -97,12 +107,36 @@ class Simulation:
                     cells.append((x0, y0, x1, y1))
 
         self.rng.shuffle(cells)
+        used = set()
         starts = []
         for cell in cells[:n_agents]:
-            x = self.rng.randint(cell[0], cell[2] - 1)
-            y = self.rng.randint(cell[1], cell[3] - 1)
-            starts.append((x, y))
+            pos = self._pick_empty_in_region(cell, used) or self._pick_any_empty(used)
+            if pos is None:
+                pos = (cell[0], cell[1])  # 최후의 보루
+            used.add(pos)
+            starts.append(pos)
         return starts
+
+    def _pick_empty_in_region(self, region, used):
+        x0, y0, x1, y1 = region
+        for _ in range(60):
+            x = self.rng.randint(x0, x1 - 1)
+            y = self.rng.randint(y0, y1 - 1)
+            if (x, y) not in used and int(self.grid.cells[y, x]) == 0:
+                return (x, y)
+        for yy in range(y0, y1):
+            for xx in range(x0, x1):
+                if (xx, yy) not in used and int(self.grid.cells[yy, xx]) == 0:
+                    return (xx, yy)
+        return None
+
+    def _pick_any_empty(self, used):
+        ys, xs = (self.grid.cells == 0).nonzero()
+        options = [(int(x), int(y)) for x, y in zip(xs, ys)
+                   if (int(x), int(y)) not in used]
+        if not options:
+            return None
+        return self.rng.choice(options)
 
     def step(self):
         # RAGE 활성 에이전트는 1 step에 두 번 행동
@@ -136,6 +170,7 @@ class Simulation:
             areas=self.grid.get_areas(len(self.agents)),
             grid=self.grid,
             rng=self.rng,
+            items=list(self.items),
         )
 
         actions = {}

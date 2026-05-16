@@ -1,0 +1,397 @@
+{
+  "match_id": "M100",
+  "stage": "QF",
+  "home": {
+    "code": "ESP",
+    "iso2": "ES",
+    "name": "Spain",
+    "formation": "4-3-3",
+    "style_tag": "possession",
+    "wc_titles": 1,
+    "overall": 94,
+    "attack": 94,
+    "defense": 96,
+    "midfield": 96,
+    "keeper": 91,
+    "goals": 2
+  },
+  "away": {
+    "code": "COL",
+    "iso2": "CO",
+    "name": "Colombia",
+    "formation": "4-2-3-1",
+    "style_tag": "balanced",
+    "wc_titles": 0,
+    "overall": 84,
+    "attack": 88,
+    "defense": 80,
+    "midfield": 86,
+    "keeper": 82,
+    "goals": 0
+  },
+  "score": {
+    "home": 2,
+    "away": 0,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "ESP",
+    "loser": "COL"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 1,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 1,
+      "kind": "setpiece",
+      "team": "ESP",
+      "text": "ESP CORNER"
+    },
+    {
+      "minute": 4,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP corner saved"
+    },
+    {
+      "minute": 7,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 8,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 8,
+      "kind": "setpiece",
+      "team": "COL",
+      "text": "COL CORNER"
+    },
+    {
+      "minute": 11,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL corner saved"
+    },
+    {
+      "minute": 13,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 19,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 19,
+      "kind": "setpiece",
+      "team": "COL",
+      "text": "COL CORNER"
+    },
+    {
+      "minute": 22,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL corner saved"
+    },
+    {
+      "minute": 30,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 31,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 35,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 35,
+      "kind": "setpiece",
+      "team": "ESP",
+      "text": "ESP CORNER"
+    },
+    {
+      "minute": 38,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP corner saved"
+    },
+    {
+      "minute": 42,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 42,
+      "kind": "setpiece",
+      "team": "COL",
+      "text": "COL CORNER"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 54,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 54,
+      "kind": "setpiece",
+      "team": "COL",
+      "text": "COL CORNER"
+    },
+    {
+      "minute": 57,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL corner saved"
+    },
+    {
+      "minute": 59,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 62,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 62,
+      "kind": "setpiece",
+      "team": "ESP",
+      "text": "ESP CORNER"
+    },
+    {
+      "minute": 64,
+      "kind": "sub",
+      "team": "COL",
+      "text": "SUB (COL) Carlos Cuesta → Mateus Uribe"
+    },
+    {
+      "minute": 65,
+      "kind": "sub",
+      "team": "COL",
+      "text": "SUB (COL) Yerry Mina → Juan Quintero"
+    },
+    {
+      "minute": 65,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP corner saved"
+    },
+    {
+      "minute": 67,
+      "kind": "sub",
+      "team": "COL",
+      "text": "SUB (COL) Johan Mojica → Rafael Santos Borre"
+    },
+    {
+      "minute": 68,
+      "kind": "sub",
+      "team": "COL",
+      "text": "SUB (COL) Daniel Munoz → Luis Sinisterra"
+    },
+    {
+      "minute": 70,
+      "kind": "sub",
+      "team": "COL",
+      "text": "SUB (COL) Richard Rios → Jhon Cordoba"
+    },
+    {
+      "minute": 70,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 70,
+      "kind": "setpiece",
+      "team": "COL",
+      "text": "COL CORNER"
+    },
+    {
+      "minute": 73,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL corner saved"
+    },
+    {
+      "minute": 76,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 79,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 80,
+      "kind": "sub",
+      "team": "ESP",
+      "text": "SUB (ESP) Robin Le Normand → Pau Cubarsi"
+    },
+    {
+      "minute": 81,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 81,
+      "kind": "setpiece",
+      "team": "COL",
+      "text": "COL CORNER"
+    },
+    {
+      "minute": 84,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL corner saved"
+    },
+    {
+      "minute": 85,
+      "kind": "sub",
+      "team": "ESP",
+      "text": "SUB (ESP) Martin Zubimendi → Inigo Martinez"
+    },
+    {
+      "minute": 87,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 87,
+      "kind": "setpiece",
+      "team": "COL",
+      "text": "COL CORNER"
+    },
+    {
+      "minute": 90,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL corner saved"
+    },
+    {
+      "minute": 92,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 95,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 97,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 98,
+      "kind": "half",
+      "team": null,
+      "text": "EXTRA TIME"
+    },
+    {
+      "minute": 102,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 104,
+      "kind": "goal",
+      "team": "ESP",
+      "text": "GOAL — Lamine Yamal (assist: Rodri, ESP)"
+    },
+    {
+      "minute": 104,
+      "kind": "tactical",
+      "team": "ESP",
+      "text": "TACTIC (ESP) 4-1-4-1"
+    },
+    {
+      "minute": 104,
+      "kind": "tactical",
+      "team": "COL",
+      "text": "TACTIC (COL) 4-2-4"
+    },
+    {
+      "minute": 114,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP shot, saved"
+    },
+    {
+      "minute": 114,
+      "kind": "setpiece",
+      "team": "ESP",
+      "text": "ESP CORNER"
+    },
+    {
+      "minute": 117,
+      "kind": "shot",
+      "team": "ESP",
+      "text": "ESP corner saved"
+    },
+    {
+      "minute": 120,
+      "kind": "shot",
+      "team": "COL",
+      "text": "COL shot, saved"
+    },
+    {
+      "minute": 124,
+      "kind": "goal",
+      "team": "ESP",
+      "text": "GOAL — Lamine Yamal (assist: Nico Williams, ESP)"
+    },
+    {
+      "minute": 128,
+      "kind": "fulltime",
+      "team": null,
+      "text": "ET FULL TIME"
+    }
+  ]
+}

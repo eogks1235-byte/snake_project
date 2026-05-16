@@ -1,0 +1,6033 @@
+{
+  "_meta": {
+    "description": "48 teams x 16 real national-team players. All names in romanized English.",
+    "role_distribution": "1 GK / 5 DEF / 5 MID / 5 FWD = 16",
+    "fields": {
+      "name": "player name (real)",
+      "role": "GK / DEF / MID / FWD",
+      "rating": "60~91 (스타 75~91)",
+      "is_star": "스타 여부 (5/팀)",
+      "pk_taker": "PK 전담 키커"
+    }
+  },
+  "squads": {
+    "MEX": [
+      {
+        "name": "Memo Ochoa",
+        "role": "GK",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cesar Montes",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jesus Gallardo",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Johan Vasquez",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jorge Sanchez",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kevin Alvarez",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Edson Alvarez",
+        "role": "MID",
+        "rating": 81,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Luis Romo",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Erick Sanchez",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Orbelin Pineda",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marcelo Flores",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hirving Lozano",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Raul Jimenez",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Santiago Gimenez",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Henry Martin",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cesar Huerta",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Israel Reyes",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Carlos Rodriguez",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Diego Lainez",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "RSA": [
+      {
+        "name": "Ronwen Williams",
+        "role": "GK",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Mothobi Mvala",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Khuliso Mudau",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aubrey Modiba",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Siyanda Xulu",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Grant Kekana",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Themba Zwane",
+        "role": "MID",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Teboho Mokoena",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": true
+      },
+      {
+        "name": "Sphephelo Sithole",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Patrick Maswanganyi",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mihlali Mayambela",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Percy Tau",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Lyle Foster",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Iqraam Rayners",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Evidence Makgopa",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Thapelo Morena",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Innocent Maela",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Goodman Mosele",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bongokuhle Hlongwane",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "KOR": [
+      {
+        "name": "Jo Hyeon-woo",
+        "role": "GK",
+        "rating": 78,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Kim Min-jae",
+        "role": "DEF",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Kim Ju-sung",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kim Young-gwon",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lee Ki-je",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Seol Young-woo",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lee Kang-in",
+        "role": "MID",
+        "rating": 88,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Hwang In-beom",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lee Jae-sung",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jung Woo-young",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Baek Seung-ho",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Son Heung-min",
+        "role": "FWD",
+        "rating": 85,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Hwang Hee-chan",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cho Gue-sung",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Oh Hyeon-gyu",
+        "role": "FWD",
+        "rating": 83,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Yang Hyun-jun",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Park Jin-seop",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Park Yong-woo",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jung Sang-bin",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "CZE": [
+      {
+        "name": "Jindrich Stanek",
+        "role": "GK",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Vladimir Coufal",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Tomas Holes",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "David Jurasek",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Robin Hranac",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Pavel Krejci",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tomas Soucek",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Lukas Provod",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Pavel Sulc",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Vaclav Cerny",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lukas Cerv",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Patrik Schick",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Adam Hlozek",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Tomas Chory",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mojmir Chytil",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Adam Karabec",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jaroslav Zeleny",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Antonin Barak",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jan Kuchta",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "CAN": [
+      {
+        "name": "Milan Borjan",
+        "role": "GK",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Alistair Johnston",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Steven Vitoria",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sam Adekugbe",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Richie Laryea",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Derek Cornelius",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Alphonso Davies",
+        "role": "MID",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Stephen Eustaquio",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Jonathan Osorio",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ismael Kone",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mathieu Choiniere",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jonathan David",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cyle Larin",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Tajon Buchanan",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jacob Shaffelburg",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Theo Bair",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Moise Bombito",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Liam Fraser",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ike Ugbo",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "BIH": [
+      {
+        "name": "Ibrahim Sehic",
+        "role": "GK",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Sead Kolasinac",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Adrian Leon Barisic",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Dennis Hadzikadunic",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Amar Dedic",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Branimir Cipetic",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Miralem Pjanic",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Rade Krunic",
+        "role": "MID",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Edin Visca",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Benjamin Tahirovic",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Anel Ahmedhodzic",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Edin Dzeko",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Ermedin Demirovic",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Dzenis Burnic",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Said Hamulic",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Smail Prevljak",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Adnan Kovacevic",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Haris Hajradinovic",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sasa Zigic",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "QAT": [
+      {
+        "name": "Saad Al-Sheeb",
+        "role": "GK",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Bassam Al-Rawi",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Pedro Miguel",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Boualem Khoukhi",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tarek Salman",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Suhail",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hassan Al-Haydos",
+        "role": "MID",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Karim Boudiaf",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Abdulaziz Hatem",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohammed Waad",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Fathi",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Akram Afif",
+        "role": "FWD",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Almoez Ali",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Hassan Al-Shahrani",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Muntari",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Yusuf Abdurisag",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Homam Ahmed",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hamam Al-Amin",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Alaaeldin",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "SUI": [
+      {
+        "name": "Yann Sommer",
+        "role": "GK",
+        "rating": 81,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Manuel Akanji",
+        "role": "DEF",
+        "rating": 81,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ricardo Rodriguez",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nico Elvedi",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Fabian Schar",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Silvan Widmer",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Granit Xhaka",
+        "role": "MID",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Remo Freuler",
+        "role": "MID",
+        "rating": 77,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Xherdan Shaqiri",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Denis Zakaria",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Michel Aebischer",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Breel Embolo",
+        "role": "FWD",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Zeki Amdouni",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ruben Vargas",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Dan Ndoye",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Renato Steffen",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eray Comert",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Fabian Rieder",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Noah Okafor",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "BRA": [
+      {
+        "name": "Alisson",
+        "role": "GK",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Marquinhos",
+        "role": "DEF",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Gabriel Magalhaes",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eder Militao",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Danilo",
+        "role": "DEF",
+        "rating": 81,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Wendell",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Casemiro",
+        "role": "MID",
+        "rating": 85,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Bruno Guimaraes",
+        "role": "MID",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lucas Paqueta",
+        "role": "MID",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Andre",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joao Gomes",
+        "role": "MID",
+        "rating": 77,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Vinicius Jr",
+        "role": "FWD",
+        "rating": 90,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Rodrygo",
+        "role": "FWD",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Raphinha",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Endrick",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Richarlison",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lucas Beraldo",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Andreas Pereira",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Pedro",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "MAR": [
+      {
+        "name": "Yassine Bounou",
+        "role": "GK",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Achraf Hakimi",
+        "role": "DEF",
+        "rating": 85,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Romain Saiss",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nayef Aguerd",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Noussair Mazraoui",
+        "role": "DEF",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Adam Masina",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sofyan Amrabat",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Hakim Ziyech",
+        "role": "MID",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Azzedine Ounahi",
+        "role": "MID",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bilal El Khannouss",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Selim Amallah",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Youssef En-Nesyri",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ayoub El Kaabi",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Soufiane Rahimi",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eliesse Ben Seghir",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Abdessamad Ezzalzouli",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jawad El Yamiq",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ismael Saibari",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Brahim Diaz",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "HAI": [
+      {
+        "name": "Johny Placide",
+        "role": "GK",
+        "rating": 71,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Andy Najar",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Carlens Arcus",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ricardo Adé",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Garven Metusala",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Wilde-Donald Guerrier",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Steeven Saba",
+        "role": "MID",
+        "rating": 70,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Soni Mustivar",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Derrick Etienne",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leverton Pierre",
+        "role": "MID",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Carlo Sainvil",
+        "role": "MID",
+        "rating": 67,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Frantzdy Pierrot",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Duckens Nazon",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Mondy Prunier",
+        "role": "FWD",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kervens Belfort",
+        "role": "FWD",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Roberto Lopes",
+        "role": "FWD",
+        "rating": 67,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jephte Aguilar",
+        "role": "DEF",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Wesley Lautoa",
+        "role": "MID",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ronaldo Damus",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "SCO": [
+      {
+        "name": "Angus Gunn",
+        "role": "GK",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Andy Robertson",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Kieran Tierney",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Jack Hendry",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ryan Porteous",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Grant Hanley",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Scott McTominay",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "John McGinn",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Callum McGregor",
+        "role": "MID",
+        "rating": 77,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Billy Gilmour",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Stuart Armstrong",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Che Adams",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lyndon Dykes",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lawrence Shankland",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tommy Conway",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ben Doak",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aaron Hickey",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ryan Christie",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "James Forrest",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "USA": [
+      {
+        "name": "Matt Turner",
+        "role": "GK",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Sergino Dest",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Tim Ream",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Chris Richards",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Antonee Robinson",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joe Scally",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tyler Adams",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Weston McKennie",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Yunus Musah",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Gio Reyna",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Luca de la Torre",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Christian Pulisic",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Folarin Balogun",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ricardo Pepi",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tim Weah",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Brenden Aaronson",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cameron Carter-Vickers",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Johnny Cardoso",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Haji Wright",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "PAR": [
+      {
+        "name": "Antony Silva",
+        "role": "GK",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Gustavo Gomez",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Junior Alonso",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Omar Alderete",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Robert Rojas",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Juan Caceres",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Miguel Almiron",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Damian Bobadilla",
+        "role": "MID",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Andres Cubas",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mathias Villasanti",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Diego Gomez",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Antonio Sanabria",
+        "role": "FWD",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Julio Enciso",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Adam Bareiro",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ramon Sosa",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Alex Arce",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Fabian Balbuena",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hernesto Caballero",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Roque Santa Cruz",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "AUS": [
+      {
+        "name": "Mat Ryan",
+        "role": "GK",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Harry Souttar",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kye Rowles",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aziz Behich",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Milos Degenek",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cameron Burgess",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aaron Mooy",
+        "role": "MID",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Ajdin Hrustic",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Riley McGree",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Connor Metcalfe",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Keanu Baccus",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mathew Leckie",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Mitchell Duke",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Kusini Yengi",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Awer Mabil",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jamie Maclaren",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joel King",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jackson Irvine",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bruno Fornaroli",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "TUR": [
+      {
+        "name": "Ugurcan Cakir",
+        "role": "GK",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Merih Demiral",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Caglar Soyuncu",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mert Muldur",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ferdi Kadioglu",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Samet Akaydin",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hakan Calhanoglu",
+        "role": "MID",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Arda Guler",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cengiz Under",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ismail Yuksek",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Salih Ozcan",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kenan Yildiz",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Baris Alper Yilmaz",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Yusuf Yazici",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Semih Kilicsoy",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bertug Yildirim",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Zeki Celik",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Orkun Kokcu",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Yunus Akgun",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "GER": [
+      {
+        "name": "Manuel Neuer",
+        "role": "GK",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Joshua Kimmich",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Antonio Rudiger",
+        "role": "DEF",
+        "rating": 85,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jonathan Tah",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "David Raum",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Maximilian Mittelstadt",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nico Schlotterbeck",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jamal Musiala",
+        "role": "MID",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Florian Wirtz",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Pascal Gross",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Robert Andrich",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kai Havertz",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Niclas Fullkrug",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leroy Sane",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Serge Gnabry",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Deniz Undav",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Benjamin Henrichs",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leon Goretzka",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Karim Adeyemi",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "CUW": [
+      {
+        "name": "Eloy Room",
+        "role": "GK",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cuco Martina",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Jurien Gaari",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Roshon van Eijma",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sherel Floranus",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Dilyan Soto",
+        "role": "DEF",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leandro Bacuna",
+        "role": "MID",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Tahith Chong",
+        "role": "MID",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Juninho Bacuna",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Charlison Benschop",
+        "role": "MID",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Gevaro Nepomuceno",
+        "role": "MID",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mizael Caroli",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Jurgen Locadia",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Vurnon Anita",
+        "role": "FWD",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Rangelo Janga",
+        "role": "FWD",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cuco Martina Jr",
+        "role": "FWD",
+        "rating": 67,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Diego Diaz",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Roly Bonevacia",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bastian Cuypers",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "CIV": [
+      {
+        "name": "Yahia Fofana",
+        "role": "GK",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eric Bailly",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Wilfried Singo",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Evan Ndicka",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ghislain Konan",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Serge Aurier",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Franck Kessie",
+        "role": "MID",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Wilfried Zaha",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ibrahim Sangare",
+        "role": "MID",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Seko Fofana",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jean Michael Seri",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sebastien Haller",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Yann Diomande",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Nicolas Pepe",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Simon Adingra",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jonathan Bamba",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Willy Boly",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sekou Sangare",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Christian Kouame",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "ECU": [
+      {
+        "name": "Hernan Galindez",
+        "role": "GK",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Pervis Estupinan",
+        "role": "DEF",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Piero Hincapie",
+        "role": "DEF",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Felix Torres",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Angelo Preciado",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "William Pacho",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Moises Caicedo",
+        "role": "MID",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Jhegson Mendez",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Alan Franco",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kendry Paez",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jeremy Sarmiento",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Enner Valencia",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Kevin Rodriguez",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leonardo Campana",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Gonzalo Plata",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "John Yeboah",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jackson Porozo",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Patrickson Delgado",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ayrton Preciado",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "NED": [
+      {
+        "name": "Justin Bijlow",
+        "role": "GK",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Virgil van Dijk",
+        "role": "DEF",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Matthijs de Ligt",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nathan Ake",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Denzel Dumfries",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lutsharel Geertruida",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Frenkie de Jong",
+        "role": "MID",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Tijjani Reijnders",
+        "role": "MID",
+        "rating": 81,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Xavi Simons",
+        "role": "MID",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jerdy Schouten",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joey Veerman",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Memphis Depay",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cody Gakpo",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Wout Weghorst",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Brian Brobbey",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Donyell Malen",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Stefan de Vrij",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marten de Roon",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Steven Bergwijn",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "JPN": [
+      {
+        "name": "Zion Suzuki",
+        "role": "GK",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ko Itakura",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Takehiro Tomiyasu",
+        "role": "DEF",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hiroki Ito",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Yukinari Sugawara",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hiroki Sakai",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Wataru Endo",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Takefusa Kubo",
+        "role": "MID",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Daichi Kamada",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Hidemasa Morita",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Junya Ito",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kaoru Mitoma",
+        "role": "FWD",
+        "rating": 83,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Daizen Maeda",
+        "role": "FWD",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ayase Ueda",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mao Hosoya",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Takuma Asano",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Shogo Taniguchi",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Shuto Machino",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "SWE": [
+      {
+        "name": "Robin Olsen",
+        "role": "GK",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Victor Lindelof",
+        "role": "DEF",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Isak Hien",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Gabriel Gudmundsson",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Emil Krafth",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Daniel Sundgren",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jens Cajuste",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mattias Svanberg",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Albin Ekdal",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kristoffer Olsson",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Daniel Svensson",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Alexander Isak",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Viktor Gyokeres",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Dejan Kulusevski",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Anthony Elanga",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Emil Forsberg",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jonas Knudsen",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jens-Lys Cajuste",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "TUN": [
+      {
+        "name": "Aymen Dahmen",
+        "role": "GK",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Dylan Bronn",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Yan Valery",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mortadha Ben Ouanes",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ali Maaloul",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Montassar Talbi",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aissa Laidouni",
+        "role": "MID",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Hannibal Mejbri",
+        "role": "MID",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Ferjani Sassi",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ellyes Skhiri",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Drager",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Wahbi Khazri",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Youssef Msakni",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Issam Jebali",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Naim Sliti",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Seifeddine Jaziri",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Anis Ben Slimane",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "BEL": [
+      {
+        "name": "Thibaut Courtois",
+        "role": "GK",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Wout Faes",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Arthur Theate",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Zeno Debast",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Timothy Castagne",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Maxim de Cuyper",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kevin De Bruyne",
+        "role": "MID",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Youri Tielemans",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Amadou Onana",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leandro Trossard",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hans Vanaken",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Romelu Lukaku",
+        "role": "FWD",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Jeremy Doku",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Dodi Lukebakio",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Charles De Ketelaere",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Loïs Openda",
+        "role": "FWD",
+        "rating": 81,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jan Vertonghen",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Michy Batshuayi",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "EGY": [
+      {
+        "name": "Mohamed Abou Gabal",
+        "role": "GK",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Hamdy Fathy",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Hegazi",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Omar Kamal",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Fatouh",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Sayed",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Elneny",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Emam Ashour",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tarek Hamed",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ramadan Sobhi",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mahmoud Trezeguet",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Salah",
+        "role": "FWD",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Mostafa Mohamed",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Omar Marmoush",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Sayed Zizo",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marwan Mohsen",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mahmoud Hassan",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "IRN": [
+      {
+        "name": "Ali Beiranvand",
+        "role": "GK",
+        "rating": 78,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ehsan Hajsafi",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Morteza Pouraliganji",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sadegh Moharrami",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Milad Mohammadi",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hossein Kanaanizadegan",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmad Nourollahi",
+        "role": "MID",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Saeid Ezatolahi",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Saman Ghoddos",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Vahid Amiri",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Alireza Jahanbakhsh",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mehdi Taremi",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Sardar Azmoun",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Karim Ansarifard",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mehdi Ghayedi",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Allahyar Sayyadmanesh",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "NZL": [
+      {
+        "name": "Max Crocombe",
+        "role": "GK",
+        "rating": 71,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Tim Payne",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Liberato Cacace",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Michael Boxall",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tyler Bindon",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nando Pijnaker",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sarpreet Singh",
+        "role": "MID",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Joe Bell",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marko Stamenic",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Matthew Garbett",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Clayton Lewis",
+        "role": "MID",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Chris Wood",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Kosta Barbarouses",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ben Waine",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Logan Rogerson",
+        "role": "FWD",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Storm Roux",
+        "role": "FWD",
+        "rating": 68,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "ESP": [
+      {
+        "name": "Unai Simon",
+        "role": "GK",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Daniel Carvajal",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aymeric Laporte",
+        "role": "DEF",
+        "rating": 81,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Robin Le Normand",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marc Cucurella",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Pau Cubarsi",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Rodri",
+        "role": "MID",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Pedri",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Fabian Ruiz",
+        "role": "MID",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Martin Zubimendi",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mikel Merino",
+        "role": "MID",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lamine Yamal",
+        "role": "FWD",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Nico Williams",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Alvaro Morata",
+        "role": "FWD",
+        "rating": 81,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mikel Oyarzabal",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ferran Torres",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Inigo Martinez",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joselu",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "CPV": [
+      {
+        "name": "Vozinha",
+        "role": "GK",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Logan Costa",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Stopira",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Diney",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kenny Rocha",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nilton Varela",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nuno Borges",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jamiro Monteiro",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Yannick Semedo",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Patrick Andrade",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Laros Duarte",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ryan Mendes",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Bebe",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Garry Rodrigues",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Gilson Tavares",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Willy Semedo",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sidnei Tavares",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "KSA": [
+      {
+        "name": "Mohammed Al-Owais",
+        "role": "GK",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Yasser Al-Shahrani",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ali Al-Bulaihi",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hassan Tambakti",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sultan Al-Ghannam",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Saud Abdulhamid",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Salman Al-Faraj",
+        "role": "MID",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Kanno",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nasser Al-Dawsari",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Abdullah Otayf",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hattan Bahebri",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Salem Al-Dawsari",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Saleh Al-Shehri",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Abdullah Al-Hamdan",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Firas Al-Buraikan",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Al-Saiari",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "URU": [
+      {
+        "name": "Sergio Rochet",
+        "role": "GK",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ronald Araujo",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Jose Maria Gimenez",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sebastian Caceres",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mathias Olivera",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nahitan Nandez",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Federico Valverde",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Manuel Ugarte",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Rodrigo Bentancur",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Maxi Araujo",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Nicolas de la Cruz",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Darwin Nunez",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Maximiliano Araujo",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Facundo Pellistri",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Brian Rodriguez",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Luis Suarez",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "FRA": [
+      {
+        "name": "Mike Maignan",
+        "role": "GK",
+        "rating": 85,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "William Saliba",
+        "role": "DEF",
+        "rating": 85,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Dayot Upamecano",
+        "role": "DEF",
+        "rating": 83,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Theo Hernandez",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jules Kounde",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ferland Mendy",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aurelien Tchouameni",
+        "role": "MID",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Antoine Griezmann",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Eduardo Camavinga",
+        "role": "MID",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "N'Golo Kante",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Adrien Rabiot",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kylian Mbappe",
+        "role": "FWD",
+        "rating": 91,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Ousmane Dembele",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marcus Thuram",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bradley Barcola",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Randal Kolo Muani",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ibrahima Konate",
+        "role": "DEF",
+        "rating": 81,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "SEN": [
+      {
+        "name": "Edouard Mendy",
+        "role": "GK",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Kalidou Koulibaly",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Abdou Diallo",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Youssouf Sabaly",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Fode Ballo-Toure",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Pape Abou Cisse",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Idrissa Gana Gueye",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Pape Matar Sarr",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Krepin Diatta",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Pathe Ciss",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lamine Camara",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sadio Mane",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Ismaila Sarr",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Boulaye Dia",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Habib Diallo",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nicolas Jackson",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "IRQ": [
+      {
+        "name": "Hussein Ali",
+        "role": "GK",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ali Adnan",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Rebin Sulaka",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mustafa Nadhim",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Manaf Younis",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmed Yahya",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bashar Resan",
+        "role": "MID",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Amir Al-Ammari",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ibrahim Bayesh",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hassan Ali",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sherko Karim",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aymen Hussein",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Mohanad Ali",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ali Al-Hamadi",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Zidane Iqbal",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohammed Qasim",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "NOR": [
+      {
+        "name": "Orjan Nyland",
+        "role": "GK",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Kristoffer Ajer",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Stefan Strandberg",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leo Ostigard",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Birger Meling",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Julian Ryerson",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Martin Odegaard",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Sander Berge",
+        "role": "MID",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Patrick Berg",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Fredrik Aursnes",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mathias Normann",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Erling Haaland",
+        "role": "FWD",
+        "rating": 91,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Alexander Sorloth",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Antonio Nusa",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Elyounoussi",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jorgen Strand Larsen",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "ARG": [
+      {
+        "name": "Emiliano Martinez",
+        "role": "GK",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cristian Romero",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Lisandro Martinez",
+        "role": "DEF",
+        "rating": 83,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nicolas Otamendi",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nahuel Molina",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marcos Acuna",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Rodrigo De Paul",
+        "role": "MID",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Enzo Fernandez",
+        "role": "MID",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Alexis Mac Allister",
+        "role": "MID",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Leandro Paredes",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Giovani Lo Celso",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lionel Messi",
+        "role": "FWD",
+        "rating": 90,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Lautaro Martinez",
+        "role": "FWD",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Julian Alvarez",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Angel Di Maria",
+        "role": "FWD",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nicolas Gonzalez",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "ALG": [
+      {
+        "name": "Rais M'Bolhi",
+        "role": "GK",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Aissa Mandi",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ramy Bensebaini",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Youcef Atal",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Tougai",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jaouen Hadjam",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Riyad Mahrez",
+        "role": "MID",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Said Benrahma",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Houssem Aouar",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ismael Bennacer",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Adam Ounas",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Islam Slimani",
+        "role": "FWD",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Baghdad Bounedjah",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Riyad Mahrez",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohamed Amoura",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Yacine Brahimi",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "AUT": [
+      {
+        "name": "Patrick Pentz",
+        "role": "GK",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "David Alaba",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Maximilian Wober",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kevin Danso",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Philipp Mwene",
+        "role": "DEF",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Stefan Posch",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Konrad Laimer",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Marcel Sabitzer",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Christoph Baumgartner",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Florian Grillitsch",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nicolas Seiwald",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marko Arnautovic",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Michael Gregoritsch",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marcel Sabitzer",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Patrick Wimmer",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Maximilian Entrup",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "JOR": [
+      {
+        "name": "Yazeed Abulaila",
+        "role": "GK",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Yazan Al-Arab",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Anas Bani-Yaseen",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Bara' Marei",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ehsan Haddad",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Salem Al-Ajalin",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mahmoud Al-Mardi",
+        "role": "MID",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Noor Al-Rawabdeh",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nizar Al-Rashdan",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ali Olwan",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Hamza Al-Dardour",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mousa Tamari",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Yazan Al-Naimat",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ali Olwan",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mahmoud Mardi",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ahmad Ersan",
+        "role": "FWD",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "POR": [
+      {
+        "name": "Diogo Costa",
+        "role": "GK",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ruben Dias",
+        "role": "DEF",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Pepe",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joao Cancelo",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nuno Mendes",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Antonio Silva",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bruno Fernandes",
+        "role": "MID",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Bernardo Silva",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Vitinha",
+        "role": "MID",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joao Palhinha",
+        "role": "MID",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Otavio",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cristiano Ronaldo",
+        "role": "FWD",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Rafael Leao",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Joao Felix",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Goncalo Ramos",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Diogo Jota",
+        "role": "FWD",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "COD": [
+      {
+        "name": "Lionel Mpasi",
+        "role": "GK",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Chancel Mbemba",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Arthur Masuaku",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Gedeon Kalulu",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Henoc Inonga",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marcel Tisserand",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Aaron Tshibola",
+        "role": "MID",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Samuel Moutoussamy",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Charles Pickel",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Edo Kayembe",
+        "role": "MID",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Theo Bongonda",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cedric Bakambu",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Yoane Wissa",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Silas Katompa",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Meschack Elia",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ben Malango",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "UZB": [
+      {
+        "name": "Utkir Yusupov",
+        "role": "GK",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Khojiakbar Alijonov",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Rustamjon Ashurmatov",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Farrukh Sayfiev",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Sherzod Nasrullaev",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Akram Tursunov",
+        "role": "DEF",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Otabek Shukurov",
+        "role": "MID",
+        "rating": 72,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Abbosbek Faizullaev",
+        "role": "MID",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Jaloliddin Masharipov",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Azizbek Turgunboev",
+        "role": "MID",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Doniyor Ismoilov",
+        "role": "MID",
+        "rating": 69,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eldor Shomurodov",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Igor Sergeev",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Bobur Abdikholikov",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Khusayin Norchaev",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jasurbek Yakhshiboev",
+        "role": "FWD",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Akmal Mozgovoy",
+        "role": "DEF",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "COL": [
+      {
+        "name": "David Ospina",
+        "role": "GK",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Davinson Sanchez",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Yerry Mina",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Daniel Munoz",
+        "role": "DEF",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Johan Mojica",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Carlos Cuesta",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jefferson Lerma",
+        "role": "MID",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "James Rodriguez",
+        "role": "MID",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Richard Rios",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mateus Uribe",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Juan Quintero",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Luis Diaz",
+        "role": "FWD",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Jhon Duran",
+        "role": "FWD",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Rafael Santos Borre",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Luis Sinisterra",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jhon Cordoba",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "ENG": [
+      {
+        "name": "Jordan Pickford",
+        "role": "GK",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "John Stones",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marc Guehi",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Kyle Walker",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Luke Shaw",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Trent Alexander-Arnold",
+        "role": "DEF",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jude Bellingham",
+        "role": "MID",
+        "rating": 87,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Declan Rice",
+        "role": "MID",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Phil Foden",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cole Palmer",
+        "role": "MID",
+        "rating": 84,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Conor Gallagher",
+        "role": "MID",
+        "rating": 78,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Harry Kane",
+        "role": "FWD",
+        "rating": 89,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Bukayo Saka",
+        "role": "FWD",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Anthony Gordon",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ollie Watkins",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eberechi Eze",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Lewis Dunk",
+        "role": "DEF",
+        "rating": 80,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "CRO": [
+      {
+        "name": "Dominik Livakovic",
+        "role": "GK",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Josko Gvardiol",
+        "role": "DEF",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Josip Sutalo",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Borna Sosa",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Josip Stanisic",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Martin Erlic",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Luka Modric",
+        "role": "MID",
+        "rating": 86,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Mateo Kovacic",
+        "role": "MID",
+        "rating": 82,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Marcelo Brozovic",
+        "role": "MID",
+        "rating": 79,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mario Pasalic",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Nikola Vlasic",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Andrej Kramaric",
+        "role": "FWD",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Bruno Petkovic",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mislav Orsic",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ante Budimir",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Marko Pjaca",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Domagoj Vida",
+        "role": "DEF",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "GHA": [
+      {
+        "name": "Lawrence Ati-Zigi",
+        "role": "GK",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohammed Salisu",
+        "role": "DEF",
+        "rating": 77,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Daniel Amartey",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Alidu Seidu",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Gideon Mensah",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Tariq Lamptey",
+        "role": "DEF",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Mohammed Kudus",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Thomas Partey",
+        "role": "MID",
+        "rating": 80,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Salis Abdul Samed",
+        "role": "MID",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Andre Ayew",
+        "role": "MID",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Edmund Addo",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Inaki Williams",
+        "role": "FWD",
+        "rating": 79,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Antoine Semenyo",
+        "role": "FWD",
+        "rating": 76,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jordan Ayew",
+        "role": "FWD",
+        "rating": 75,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ernest Nuamah",
+        "role": "FWD",
+        "rating": 74,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Felix Afena-Gyan",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ],
+    "PAN": [
+      {
+        "name": "Orlando Mosquera",
+        "role": "GK",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Cesar Blackman",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Andres Andrade",
+        "role": "DEF",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Michael Amir Murillo",
+        "role": "DEF",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eric Davis",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jose Cordoba",
+        "role": "DEF",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Adalberto Carrasquilla",
+        "role": "MID",
+        "rating": 75,
+        "is_star": true,
+        "pk_taker": true
+      },
+      {
+        "name": "Yoel Barcenas",
+        "role": "MID",
+        "rating": 74,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Anibal Godoy",
+        "role": "MID",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cristian Martinez",
+        "role": "MID",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Ivan Anderson",
+        "role": "MID",
+        "rating": 70,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Cecilio Waterman",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": true,
+        "pk_taker": false
+      },
+      {
+        "name": "Ismael Diaz",
+        "role": "FWD",
+        "rating": 73,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Jose Fajardo",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Edgar Barcenas",
+        "role": "FWD",
+        "rating": 72,
+        "is_star": false,
+        "pk_taker": false
+      },
+      {
+        "name": "Eduardo Guerrero",
+        "role": "FWD",
+        "rating": 71,
+        "is_star": false,
+        "pk_taker": false
+      }
+    ]
+  }
+}

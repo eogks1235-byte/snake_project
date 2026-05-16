@@ -1,0 +1,337 @@
+{
+  "match_id": "M83",
+  "stage": "R32",
+  "home": {
+    "code": "UZB",
+    "iso2": "UZ",
+    "name": "Uzbekistan",
+    "formation": "5-4-1",
+    "style_tag": "parking-bus",
+    "wc_titles": 0,
+    "overall": 72,
+    "attack": 68,
+    "defense": 74,
+    "midfield": 71,
+    "keeper": 73,
+    "goals": 1
+  },
+  "away": {
+    "code": "GHA",
+    "iso2": "GH",
+    "name": "Ghana",
+    "formation": "3-5-2",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 73,
+    "attack": 75,
+    "defense": 73,
+    "midfield": 71,
+    "keeper": 72,
+    "goals": 1
+  },
+  "score": {
+    "home": 1,
+    "away": 1,
+    "went_to_pk": true,
+    "pk_home": 5,
+    "pk_away": 4,
+    "winner": "UZB",
+    "loser": "GHA"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 22,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA shot, saved"
+    },
+    {
+      "minute": 24,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 24,
+      "kind": "setpiece",
+      "team": "UZB",
+      "text": "UZB CORNER"
+    },
+    {
+      "minute": 27,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB corner saved"
+    },
+    {
+      "minute": 30,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 30,
+      "kind": "setpiece",
+      "team": "UZB",
+      "text": "UZB CORNER"
+    },
+    {
+      "minute": 33,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB corner saved"
+    },
+    {
+      "minute": 36,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA shot, saved"
+    },
+    {
+      "minute": 42,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA shot, saved"
+    },
+    {
+      "minute": 42,
+      "kind": "setpiece",
+      "team": "GHA",
+      "text": "GHA CORNER"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Sherzod Nasrullaev → Igor Sergeev"
+    },
+    {
+      "minute": 64,
+      "kind": "sub",
+      "team": "GHA",
+      "text": "SUB (GHA) Edmund Addo → Jordan Ayew"
+    },
+    {
+      "minute": 66,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Akmal Mozgovoy → Bobur Abdikholikov"
+    },
+    {
+      "minute": 66,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA shot, saved"
+    },
+    {
+      "minute": 66,
+      "kind": "setpiece",
+      "team": "GHA",
+      "text": "GHA CORNER"
+    },
+    {
+      "minute": 68,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Farrukh Sayfiev → Khusayin Norchaev"
+    },
+    {
+      "minute": 69,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Azizbek Turgunboev → Jasurbek Yakhshiboev"
+    },
+    {
+      "minute": 69,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA corner saved"
+    },
+    {
+      "minute": 74,
+      "kind": "sub",
+      "team": "UZB",
+      "text": "SUB (UZB) Rustamjon Ashurmatov → Akram Tursunov"
+    },
+    {
+      "minute": 76,
+      "kind": "sub",
+      "team": "GHA",
+      "text": "SUB (GHA) Daniel Amartey → Ernest Nuamah"
+    },
+    {
+      "minute": 79,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 85,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 88,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA shot, saved"
+    },
+    {
+      "minute": 89,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 96,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA shot, saved"
+    },
+    {
+      "minute": 96,
+      "kind": "setpiece",
+      "team": "GHA",
+      "text": "GHA CORNER"
+    },
+    {
+      "minute": 99,
+      "kind": "half",
+      "team": null,
+      "text": "EXTRA TIME"
+    },
+    {
+      "minute": 99,
+      "kind": "shot",
+      "team": "GHA",
+      "text": "GHA corner saved"
+    },
+    {
+      "minute": 103,
+      "kind": "goal",
+      "team": "GHA",
+      "text": "GOAL — Inaki Williams (assist: Mohammed Kudus, GHA)"
+    },
+    {
+      "minute": 103,
+      "kind": "tactical",
+      "team": "UZB",
+      "text": "TACTIC (UZB) 4-3-3"
+    },
+    {
+      "minute": 103,
+      "kind": "tactical",
+      "team": "GHA",
+      "text": "TACTIC (GHA) 5-3-2"
+    },
+    {
+      "minute": 113,
+      "kind": "goal",
+      "team": "UZB",
+      "text": "GOAL — Jaloliddin Masharipov (assist: Eldor Shomurodov, UZB)"
+    },
+    {
+      "minute": 122,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB shot, saved"
+    },
+    {
+      "minute": 122,
+      "kind": "setpiece",
+      "team": "UZB",
+      "text": "UZB CORNER"
+    },
+    {
+      "minute": 125,
+      "kind": "shot",
+      "team": "UZB",
+      "text": "UZB corner saved"
+    },
+    {
+      "minute": 129,
+      "kind": "half",
+      "team": null,
+      "text": "TO PENALTIES"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "UZB",
+      "text": "PK GOAL (UZB) Eldor Shomurodov"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "GHA",
+      "text": "PK GOAL (GHA) Mohammed Kudus"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "UZB",
+      "text": "PK GOAL (UZB) Igor Sergeev"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "GHA",
+      "text": "PK GOAL (GHA) Thomas Partey"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "UZB",
+      "text": "PK GOAL (UZB) Bobur Abdikholikov"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "GHA",
+      "text": "PK GOAL (GHA) Ernest Nuamah"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "UZB",
+      "text": "PK GOAL (UZB) Khusayin Norchaev"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "GHA",
+      "text": "PK MISS (GHA) Andre Ayew"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "UZB",
+      "text": "PK GOAL (UZB) Abbosbek Faizullaev"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "GHA",
+      "text": "PK GOAL (GHA) Salis Abdul Samed"
+    },
+    {
+      "minute": 90,
+      "kind": "fulltime",
+      "team": null,
+      "text": "PK DECIDED"
+    }
+  ]
+}

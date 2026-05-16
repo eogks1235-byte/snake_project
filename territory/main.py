@@ -1,6 +1,7 @@
 """실행 진입점 — 모든 게 매 판 랜덤.
 
 매 라운드 (시작 시 + R 키):
+  - 맵 프리셋 9종 중 1개 (open/cross/pillars/arena/diagonal/stripes/islands/donut/corridors)
   - 플레이어 수 (2~8 랜덤)
   - 알고리즘 풀 15개에서 N개 랜덤 픽
   - 각 플레이어 색상 HSV 기반 랜덤 (서로 충분히 다른 색)
@@ -17,6 +18,7 @@
 CLI:
   python territory/main.py                       # 모두 랜덤
   python territory/main.py --players 6           # 플레이어 수만 고정
+  python territory/main.py --map arena           # 맵 고정
   python territory/main.py --record              # 자동 녹화
   python territory/main.py --seed 1234           # 시드 고정 (재현용)
 """
@@ -33,11 +35,13 @@ if __package__ in (None, ''):
     from territory.simulation import Simulation
     from territory.render import Renderer
     from territory.recorder import VideoRecorder
+    from territory.maps import MAP_PRESETS
 else:
     from .agents import ALGORITHM_POOL
     from .simulation import Simulation
     from .render import Renderer
     from .recorder import VideoRecorder
+    from .maps import MAP_PRESETS
 
 import pygame
 
@@ -67,7 +71,8 @@ def random_palette(n: int, rng: random.Random) -> list:
     return out
 
 
-def build_simulation(seed: int, n_players: int = None) -> tuple[Simulation, list, int]:
+def build_simulation(seed: int, n_players: int = None,
+                     map_preset: str = None) -> tuple[Simulation, list, int]:
     rng = random.Random(seed)
     if n_players is None:
         n_players = rng.randint(MIN_PLAYERS, MAX_PLAYERS)
@@ -83,7 +88,7 @@ def build_simulation(seed: int, n_players: int = None) -> tuple[Simulation, list
     colors = random_palette(n_players, rng)
     agents = [Cls(i + 1, color=c) for i, (Cls, c) in enumerate(zip(chosen, colors))]
     sim = Simulation(agents, width=GRID_SIZE, height=GRID_SIZE,
-                     seed=seed, randomize_start=True)
+                     seed=seed, randomize_start=True, map_preset=map_preset)
     return sim, agents, n_players
 
 
@@ -95,7 +100,7 @@ def make_recording_path() -> Path:
 
 
 def announce_round(seed, agents, sim, n_players):
-    print(f'[ROUND] seed={seed}  players={n_players}')
+    print(f'[ROUND] seed={seed}  players={n_players}  map={sim.map_name}')
     print(f'        algorithms: {", ".join(a.name for a in agents)}')
     print(f'        effects:    {", ".join(sim.active_effects)}')
 
@@ -106,10 +111,13 @@ def main():
                         help=f'플레이어 수 고정 ({MIN_PLAYERS}~{MAX_PLAYERS}). 생략 시 매 판 랜덤')
     parser.add_argument('--record', action='store_true')
     parser.add_argument('--seed', type=int, default=None)
+    parser.add_argument('--map', dest='map_preset', type=str, default=None,
+                        choices=[name for name, _ in MAP_PRESETS],
+                        help='맵 고정. 생략 시 매 판 랜덤.')
     args = parser.parse_args()
 
     seed = args.seed if args.seed is not None else random.randint(0, 1_000_000)
-    sim, agents, n_players = build_simulation(seed, args.players)
+    sim, agents, n_players = build_simulation(seed, args.players, args.map_preset)
     renderer = Renderer(sim, agents, cell_size=CELL_SIZE)
 
     announce_round(seed, agents, sim, n_players)
@@ -129,7 +137,7 @@ def main():
     def reset_round():
         nonlocal sim, agents, last_total, stable_count, done, hold_frames, seed, n_players
         seed = random.randint(0, 1_000_000)
-        sim, agents, n_players = build_simulation(seed, args.players)
+        sim, agents, n_players = build_simulation(seed, args.players, args.map_preset)
         # 플레이어 수가 매 라운드 바뀌므로 윈도우 크기 다시 계산
         renderer.__init__(sim, agents, cell_size=CELL_SIZE)
         last_total = -1

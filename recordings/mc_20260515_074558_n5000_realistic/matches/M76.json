@@ -1,0 +1,415 @@
+{
+  "match_id": "M76",
+  "stage": "R32",
+  "home": {
+    "code": "MAR",
+    "iso2": "MA",
+    "name": "Morocco",
+    "formation": "3-5-2",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 83,
+    "attack": 82,
+    "defense": 81,
+    "midfield": 85,
+    "keeper": 85,
+    "goals": 0
+  },
+  "away": {
+    "code": "NED",
+    "iso2": "NL",
+    "name": "Netherlands",
+    "formation": "4-3-3",
+    "style_tag": "possession",
+    "wc_titles": 0,
+    "overall": 90,
+    "attack": 87,
+    "defense": 90,
+    "midfield": 92,
+    "keeper": 90,
+    "goals": 0
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "went_to_pk": true,
+    "pk_home": 3,
+    "pk_away": 4,
+    "winner": "NED",
+    "loser": "MAR"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 1,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 16,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 21,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 21,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 24,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR corner saved"
+    },
+    {
+      "minute": 27,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 35,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 35,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 38,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR corner saved"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 54,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 54,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 57,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 60,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Adam Masina → Ayoub El Kaabi"
+    },
+    {
+      "minute": 61,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 61,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Romain Saiss → Bilal El Khannouss"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Wout Weghorst → Stefan de Vrij"
+    },
+    {
+      "minute": 64,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR corner saved"
+    },
+    {
+      "minute": 67,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 67,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 70,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Denzel Dumfries → Donyell Malen"
+    },
+    {
+      "minute": 70,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 72,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Tijjani Reijnders → Steven Bergwijn"
+    },
+    {
+      "minute": 73,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Nayef Aguerd → Jawad El Yamiq"
+    },
+    {
+      "minute": 73,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 73,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 75,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Noussair Mazraoui → Selim Amallah"
+    },
+    {
+      "minute": 76,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Azzedine Ounahi → Ismael Saibari"
+    },
+    {
+      "minute": 76,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR corner saved"
+    },
+    {
+      "minute": 77,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Nathan Ake → Lutsharel Geertruida"
+    },
+    {
+      "minute": 80,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 82,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Xavi Simons → Jerdy Schouten"
+    },
+    {
+      "minute": 82,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 82,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 85,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 88,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 98,
+      "kind": "half",
+      "team": null,
+      "text": "EXTRA TIME"
+    },
+    {
+      "minute": 100,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 106,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 106,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 109,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR corner saved"
+    },
+    {
+      "minute": 113,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 113,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 116,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR corner saved"
+    },
+    {
+      "minute": 121,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 124,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 127,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 127,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 128,
+      "kind": "half",
+      "team": null,
+      "text": "TO PENALTIES"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "MAR",
+      "text": "PK GOAL (MAR) Achraf Hakimi"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Virgil van Dijk"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "MAR",
+      "text": "PK GOAL (MAR) Youssef En-Nesyri"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK MISS (NED) Memphis Depay"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "MAR",
+      "text": "PK MISS (MAR) Brahim Diaz"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Cody Gakpo"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "MAR",
+      "text": "PK MISS (MAR) Ayoub El Kaabi"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Donyell Malen"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "MAR",
+      "text": "PK GOAL (MAR) Hakim Ziyech"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Steven Bergwijn"
+    },
+    {
+      "minute": 90,
+      "kind": "fulltime",
+      "team": null,
+      "text": "PK DECIDED"
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "match_id": "GE2",
+  "stage": "GROUP E",
+  "home": {
+    "code": "GER",
+    "iso2": "DE",
+    "name": "Germany",
+    "formation": "4-2-3-1",
+    "style_tag": "possession",
+    "wc_titles": 4,
+    "overall": 86,
+    "attack": 87,
+    "defense": 88,
+    "midfield": 85,
+    "keeper": 85,
+    "goals": 1
+  },
+  "away": {
+    "code": "CIV",
+    "iso2": "CI",
+    "name": "Côte d'Ivoire",
+    "formation": "4-2-3-1",
+    "style_tag": "balanced",
+    "wc_titles": 0,
+    "overall": 75,
+    "attack": 76,
+    "defense": 72,
+    "midfield": 76,
+    "keeper": 77,
+    "goals": 0
+  },
+  "score": {
+    "home": 1,
+    "away": 0,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "GER",
+    "loser": "CIV"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 1,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV shot, saved"
+    },
+    {
+      "minute": 2,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER shot, saved"
+    },
+    {
+      "minute": 9,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV shot, saved"
+    },
+    {
+      "minute": 9,
+      "kind": "setpiece",
+      "team": "CIV",
+      "text": "CIV CORNER"
+    },
+    {
+      "minute": 12,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV corner saved"
+    },
+    {
+      "minute": 16,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV shot, saved"
+    },
+    {
+      "minute": 16,
+      "kind": "setpiece",
+      "team": "CIV",
+      "text": "CIV CORNER"
+    },
+    {
+      "minute": 18,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV corner saved"
+    },
+    {
+      "minute": 21,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER shot, saved"
+    },
+    {
+      "minute": 26,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV shot, saved"
+    },
+    {
+      "minute": 30,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV shot, saved"
+    },
+    {
+      "minute": 30,
+      "kind": "setpiece",
+      "team": "CIV",
+      "text": "CIV CORNER"
+    },
+    {
+      "minute": 33,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV corner saved"
+    },
+    {
+      "minute": 39,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER shot, saved"
+    },
+    {
+      "minute": 39,
+      "kind": "setpiece",
+      "team": "GER",
+      "text": "GER CORNER"
+    },
+    {
+      "minute": 42,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER corner saved"
+    },
+    {
+      "minute": 43,
+      "kind": "setpiece",
+      "team": "CIV",
+      "text": "CIV FREE KICK"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 60,
+      "kind": "goal",
+      "team": "GER",
+      "text": "GOAL — Serge Gnabry (assist: Kai Havertz, GER)"
+    },
+    {
+      "minute": 60,
+      "kind": "tactical",
+      "team": "GER",
+      "text": "TACTIC (GER) 4-1-4-1"
+    },
+    {
+      "minute": 60,
+      "kind": "tactical",
+      "team": "CIV",
+      "text": "TACTIC (CIV) 4-3-3"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "GER",
+      "text": "SUB (GER) David Raum → Maximilian Mittelstadt"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "CIV",
+      "text": "SUB (CIV) Serge Aurier → Simon Adingra"
+    },
+    {
+      "minute": 65,
+      "kind": "sub",
+      "team": "CIV",
+      "text": "SUB (CIV) Willy Boly → Yann Diomande"
+    },
+    {
+      "minute": 67,
+      "kind": "sub",
+      "team": "CIV",
+      "text": "SUB (CIV) Wilfried Singo → Christian Kouame"
+    },
+    {
+      "minute": 69,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV shot, saved"
+    },
+    {
+      "minute": 70,
+      "kind": "sub",
+      "team": "GER",
+      "text": "SUB (GER) Nico Schlotterbeck → Benjamin Henrichs"
+    },
+    {
+      "minute": 71,
+      "kind": "sub",
+      "team": "GER",
+      "text": "SUB (GER) Jonathan Tah → Leon Goretzka"
+    },
+    {
+      "minute": 73,
+      "kind": "sub",
+      "team": "CIV",
+      "text": "SUB (CIV) Yahia Fofana → Jonathan Bamba"
+    },
+    {
+      "minute": 74,
+      "kind": "sub",
+      "team": "CIV",
+      "text": "SUB (CIV) Evan Ndicka → Seko Fofana"
+    },
+    {
+      "minute": 77,
+      "kind": "sub",
+      "team": "GER",
+      "text": "SUB (GER) Serge Gnabry → Karim Adeyemi"
+    },
+    {
+      "minute": 77,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER shot, saved"
+    },
+    {
+      "minute": 80,
+      "kind": "tactical",
+      "team": "CIV",
+      "text": "TACTIC (CIV) 4-2-4"
+    },
+    {
+      "minute": 80,
+      "kind": "shot",
+      "team": "CIV",
+      "text": "CIV shot, saved"
+    },
+    {
+      "minute": 82,
+      "kind": "sub",
+      "team": "GER",
+      "text": "SUB (GER) Leroy Sane → Niclas Fullkrug"
+    },
+    {
+      "minute": 83,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER shot, saved"
+    },
+    {
+      "minute": 85,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER shot, saved"
+    },
+    {
+      "minute": 85,
+      "kind": "setpiece",
+      "team": "GER",
+      "text": "GER CORNER"
+    },
+    {
+      "minute": 88,
+      "kind": "shot",
+      "team": "GER",
+      "text": "GER corner saved"
+    },
+    {
+      "minute": 94,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

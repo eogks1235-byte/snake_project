@@ -1,0 +1,235 @@
+{
+  "match_id": "GC5",
+  "stage": "GROUP C",
+  "home": {
+    "code": "MAR",
+    "iso2": "MA",
+    "name": "Morocco",
+    "formation": "3-5-2",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 83,
+    "attack": 82,
+    "defense": 81,
+    "midfield": 85,
+    "keeper": 85,
+    "goals": 2
+  },
+  "away": {
+    "code": "SCO",
+    "iso2": "GB",
+    "name": "Scotland",
+    "formation": "4-4-2",
+    "style_tag": "balanced",
+    "wc_titles": 0,
+    "overall": 74,
+    "attack": 76,
+    "defense": 74,
+    "midfield": 72,
+    "keeper": 73,
+    "goals": 1
+  },
+  "score": {
+    "home": 2,
+    "away": 1,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "MAR",
+    "loser": "SCO"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 1,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 2,
+      "kind": "shot",
+      "team": "SCO",
+      "text": "SCO shot, saved"
+    },
+    {
+      "minute": 2,
+      "kind": "setpiece",
+      "team": "SCO",
+      "text": "SCO CORNER"
+    },
+    {
+      "minute": 5,
+      "kind": "shot",
+      "team": "SCO",
+      "text": "SCO corner saved"
+    },
+    {
+      "minute": 9,
+      "kind": "goal",
+      "team": "SCO",
+      "text": "GOAL — Callum McGregor (assist: Andy Robertson, SCO)"
+    },
+    {
+      "minute": 19,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 19,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 22,
+      "kind": "goal",
+      "team": "MAR",
+      "text": "GOAL — Hakim Ziyech (assist: Romain Saiss, MAR)"
+    },
+    {
+      "minute": 41,
+      "kind": "shot",
+      "team": "SCO",
+      "text": "SCO shot, saved"
+    },
+    {
+      "minute": 41,
+      "kind": "setpiece",
+      "team": "SCO",
+      "text": "SCO CORNER"
+    },
+    {
+      "minute": 44,
+      "kind": "shot",
+      "team": "SCO",
+      "text": "SCO corner saved"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 55,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR shot, saved"
+    },
+    {
+      "minute": 55,
+      "kind": "setpiece",
+      "team": "MAR",
+      "text": "MAR CORNER"
+    },
+    {
+      "minute": 58,
+      "kind": "shot",
+      "team": "MAR",
+      "text": "MAR corner saved"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Bilal El Khannouss → Nayef Aguerd"
+    },
+    {
+      "minute": 66,
+      "kind": "sub",
+      "team": "SCO",
+      "text": "SUB (SCO) Ryan Porteous → Billy Gilmour"
+    },
+    {
+      "minute": 66,
+      "kind": "shot",
+      "team": "SCO",
+      "text": "SCO shot, saved"
+    },
+    {
+      "minute": 66,
+      "kind": "setpiece",
+      "team": "SCO",
+      "text": "SCO CORNER"
+    },
+    {
+      "minute": 69,
+      "kind": "shot",
+      "team": "SCO",
+      "text": "SCO corner saved"
+    },
+    {
+      "minute": 76,
+      "kind": "shot",
+      "team": "SCO",
+      "text": "SCO shot, saved"
+    },
+    {
+      "minute": 77,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Romain Saiss → Adam Masina"
+    },
+    {
+      "minute": 79,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Ayoub El Kaabi → Jawad El Yamiq"
+    },
+    {
+      "minute": 82,
+      "kind": "goal",
+      "team": "MAR",
+      "text": "GOAL — Youssef En-Nesyri (assist: Brahim Diaz, MAR)"
+    },
+    {
+      "minute": 82,
+      "kind": "tactical",
+      "team": "MAR",
+      "text": "TACTIC (MAR) 5-3-2"
+    },
+    {
+      "minute": 82,
+      "kind": "tactical",
+      "team": "SCO",
+      "text": "TACTIC (SCO) 4-2-4"
+    },
+    {
+      "minute": 84,
+      "kind": "sub",
+      "team": "MAR",
+      "text": "SUB (MAR) Brahim Diaz → Selim Amallah"
+    },
+    {
+      "minute": 84,
+      "kind": "sub",
+      "team": "SCO",
+      "text": "SUB (SCO) Jack Hendry → Lawrence Shankland"
+    },
+    {
+      "minute": 86,
+      "kind": "sub",
+      "team": "SCO",
+      "text": "SUB (SCO) Aaron Hickey → Ben Doak"
+    },
+    {
+      "minute": 88,
+      "kind": "sub",
+      "team": "SCO",
+      "text": "SUB (SCO) Lyndon Dykes → James Forrest"
+    },
+    {
+      "minute": 93,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

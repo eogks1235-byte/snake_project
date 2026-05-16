@@ -2,6 +2,7 @@
 import numpy as np
 
 EMPTY = 0
+WALL = -1
 
 
 class Grid:
@@ -9,9 +10,23 @@ class Grid:
         self.width = width
         self.height = height
         self.cells = np.zeros((height, width), dtype=np.int8)
+        self._wall_count = 0
 
     def in_bounds(self, x: int, y: int) -> bool:
         return 0 <= x < self.width and 0 <= y < self.height
+
+    def add_walls(self, walls) -> int:
+        """벽 좌표 리스트를 격자에 적용. 중복/범위 밖 좌표는 무시."""
+        added = 0
+        for (x, y) in walls:
+            if self.in_bounds(x, y) and int(self.cells[y, x]) != WALL:
+                self.cells[y, x] = WALL
+                added += 1
+        self._wall_count += added
+        return added
+
+    def is_wall(self, x: int, y: int) -> bool:
+        return int(self.cells[y, x]) == WALL
 
     def claim(self, x: int, y: int, agent_id: int) -> int:
         previous = int(self.cells[y, x])
@@ -25,7 +40,8 @@ class Grid:
         return {i: int((self.cells == i).sum()) for i in range(1, num_agents + 1)}
 
     def total_cells(self) -> int:
-        return self.width * self.height
+        """이동 가능한 칸 수 (벽 제외)."""
+        return self.width * self.height - self._wall_count
 
     def damage_territory(self, agent_id: int, fraction: float, rng) -> int:
         """해당 에이전트의 영토 중 일부를 무작위로 빈 칸으로 되돌림.

@@ -1,0 +1,427 @@
+{
+  "match_id": "M103",
+  "stage": "3rd",
+  "home": {
+    "code": "BEL",
+    "iso2": "BE",
+    "name": "Belgium",
+    "formation": "4-3-3",
+    "style_tag": "possession",
+    "wc_titles": 0,
+    "overall": 84,
+    "attack": 81,
+    "defense": 85,
+    "midfield": 86,
+    "keeper": 86,
+    "goals": 1
+  },
+  "away": {
+    "code": "NED",
+    "iso2": "NL",
+    "name": "Netherlands",
+    "formation": "4-3-3",
+    "style_tag": "possession",
+    "wc_titles": 0,
+    "overall": 90,
+    "attack": 87,
+    "defense": 90,
+    "midfield": 92,
+    "keeper": 90,
+    "goals": 1
+  },
+  "score": {
+    "home": 1,
+    "away": 1,
+    "went_to_pk": true,
+    "pk_home": 4,
+    "pk_away": 5,
+    "winner": "NED",
+    "loser": "BEL"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 11,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 14,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 14,
+      "kind": "setpiece",
+      "team": "BEL",
+      "text": "BEL CORNER"
+    },
+    {
+      "minute": 17,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL corner saved"
+    },
+    {
+      "minute": 32,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 39,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 39,
+      "kind": "setpiece",
+      "team": "BEL",
+      "text": "BEL CORNER"
+    },
+    {
+      "minute": 42,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL corner saved"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 55,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 55,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 58,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 60,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Arthur Theate → Leandro Trossard"
+    },
+    {
+      "minute": 60,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 60,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 63,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 64,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Timothy Castagne → Dodi Lukebakio"
+    },
+    {
+      "minute": 66,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 66,
+      "kind": "setpiece",
+      "team": "BEL",
+      "text": "BEL CORNER"
+    },
+    {
+      "minute": 69,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL corner saved"
+    },
+    {
+      "minute": 71,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Jan Vertonghen → Charles De Ketelaere"
+    },
+    {
+      "minute": 71,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Wout Weghorst → Stefan de Vrij"
+    },
+    {
+      "minute": 72,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Denzel Dumfries → Donyell Malen"
+    },
+    {
+      "minute": 75,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Youri Tielemans → Michy Batshuayi"
+    },
+    {
+      "minute": 75,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 76,
+      "kind": "sub",
+      "team": "BEL",
+      "text": "SUB (BEL) Amadou Onana → Zeno Debast"
+    },
+    {
+      "minute": 77,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 79,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Tijjani Reijnders → Steven Bergwijn"
+    },
+    {
+      "minute": 80,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Nathan Ake → Lutsharel Geertruida"
+    },
+    {
+      "minute": 82,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 82,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 85,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 87,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 87,
+      "kind": "setpiece",
+      "team": "BEL",
+      "text": "BEL CORNER"
+    },
+    {
+      "minute": 88,
+      "kind": "sub",
+      "team": "NED",
+      "text": "SUB (NED) Xavi Simons → Jerdy Schouten"
+    },
+    {
+      "minute": 90,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL corner saved"
+    },
+    {
+      "minute": 92,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED shot, saved"
+    },
+    {
+      "minute": 92,
+      "kind": "setpiece",
+      "team": "NED",
+      "text": "NED CORNER"
+    },
+    {
+      "minute": 95,
+      "kind": "shot",
+      "team": "NED",
+      "text": "NED corner saved"
+    },
+    {
+      "minute": 97,
+      "kind": "setpiece",
+      "team": "BEL",
+      "text": "BEL FREE KICK"
+    },
+    {
+      "minute": 99,
+      "kind": "half",
+      "team": null,
+      "text": "EXTRA TIME"
+    },
+    {
+      "minute": 100,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL free_kick saved"
+    },
+    {
+      "minute": 106,
+      "kind": "goal",
+      "team": "NED",
+      "text": "GOAL — Steven Bergwijn (assist: Lutsharel Geertruida, NED)"
+    },
+    {
+      "minute": 106,
+      "kind": "tactical",
+      "team": "BEL",
+      "text": "TACTIC (BEL) 4-2-4"
+    },
+    {
+      "minute": 106,
+      "kind": "tactical",
+      "team": "NED",
+      "text": "TACTIC (NED) 4-1-4-1"
+    },
+    {
+      "minute": 117,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 117,
+      "kind": "setpiece",
+      "team": "BEL",
+      "text": "BEL CORNER"
+    },
+    {
+      "minute": 120,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL corner saved"
+    },
+    {
+      "minute": 122,
+      "kind": "shot",
+      "team": "BEL",
+      "text": "BEL shot, saved"
+    },
+    {
+      "minute": 122,
+      "kind": "setpiece",
+      "team": "BEL",
+      "text": "BEL CORNER"
+    },
+    {
+      "minute": 125,
+      "kind": "goal",
+      "team": "BEL",
+      "text": "GOAL — Jeremy Doku (assist: Romelu Lukaku, BEL)"
+    },
+    {
+      "minute": 129,
+      "kind": "half",
+      "team": null,
+      "text": "TO PENALTIES"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "BEL",
+      "text": "PK GOAL (BEL) Kevin De Bruyne"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Virgil van Dijk"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "BEL",
+      "text": "PK MISS (BEL) Romelu Lukaku"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Donyell Malen"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "BEL",
+      "text": "PK GOAL (BEL) Dodi Lukebakio"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Frenkie de Jong"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "BEL",
+      "text": "PK GOAL (BEL) Charles De Ketelaere"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Memphis Depay"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "BEL",
+      "text": "PK GOAL (BEL) Michy Batshuayi"
+    },
+    {
+      "minute": 90,
+      "kind": "pk",
+      "team": "NED",
+      "text": "PK GOAL (NED) Cody Gakpo"
+    },
+    {
+      "minute": 90,
+      "kind": "fulltime",
+      "team": null,
+      "text": "PK DECIDED"
+    }
+  ]
+}

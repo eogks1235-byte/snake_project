@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m neural.compare --n-seeds 3 --ticks 600)",
+      "Bash(python -m neural.compare_video --ticks 200 --headless)",
+      "Bash(rm -f recordings/neural/neural_*.mp4)",
+      "Bash(python -m neural.main --record --headless --auto-exit-ticks 300)",
+      "Bash(python -m neural.main --record --headless --auto-exit-ticks 200)",
+      "Bash(python -m neural.battle --headless --ticks 100)",
+      "Bash(python -m neural.compare_video --headless --ticks 3600)"
+    ]
+  }
+}

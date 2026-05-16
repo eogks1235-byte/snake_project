@@ -1,0 +1,253 @@
+{
+  "match_id": "M77",
+  "stage": "R32",
+  "home": {
+    "code": "NOR",
+    "iso2": "NO",
+    "name": "Norway",
+    "formation": "4-4-2",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 76,
+    "attack": 78,
+    "defense": 78,
+    "midfield": 77,
+    "keeper": 73,
+    "goals": 2
+  },
+  "away": {
+    "code": "EGY",
+    "iso2": "EG",
+    "name": "Egypt",
+    "formation": "4-2-3-1",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 76,
+    "attack": 78,
+    "defense": 72,
+    "midfield": 78,
+    "keeper": 78,
+    "goals": 1
+  },
+  "score": {
+    "home": 2,
+    "away": 1,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "NOR",
+    "loser": "EGY"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 2,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 4,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 4,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 7,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR corner saved"
+    },
+    {
+      "minute": 9,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 9,
+      "kind": "setpiece",
+      "team": "EGY",
+      "text": "EGY CORNER"
+    },
+    {
+      "minute": 12,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY corner saved"
+    },
+    {
+      "minute": 18,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 18,
+      "kind": "setpiece",
+      "team": "EGY",
+      "text": "EGY CORNER"
+    },
+    {
+      "minute": 21,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY corner saved"
+    },
+    {
+      "minute": 24,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 24,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 27,
+      "kind": "goal",
+      "team": "NOR",
+      "text": "GOAL — Erling Haaland (assist: Orjan Nyland, NOR)"
+    },
+    {
+      "minute": 27,
+      "kind": "tactical",
+      "team": "EGY",
+      "text": "TACTIC (EGY) 4-3-3"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 50,
+      "kind": "tactical",
+      "team": "NOR",
+      "text": "TACTIC (NOR) 4-1-4-1"
+    },
+    {
+      "minute": 54,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 54,
+      "kind": "setpiece",
+      "team": "EGY",
+      "text": "EGY CORNER"
+    },
+    {
+      "minute": 57,
+      "kind": "goal",
+      "team": "EGY",
+      "text": "GOAL — Hamdy Fathy (assist: Mahmoud Hassan, EGY)"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Stefan Strandberg → Antonio Nusa"
+    },
+    {
+      "minute": 70,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Patrick Berg → Mohamed Elyounoussi"
+    },
+    {
+      "minute": 70,
+      "kind": "sub",
+      "team": "EGY",
+      "text": "SUB (EGY) Omar Kamal → Omar Marmoush"
+    },
+    {
+      "minute": 71,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Leo Ostigard → Jorgen Strand Larsen"
+    },
+    {
+      "minute": 71,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 74,
+      "kind": "sub",
+      "team": "EGY",
+      "text": "SUB (EGY) Mahmoud Hassan → Mostafa Mohamed"
+    },
+    {
+      "minute": 75,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 78,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Julian Ryerson → Birger Meling"
+    },
+    {
+      "minute": 79,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Fredrik Aursnes → Mathias Normann"
+    },
+    {
+      "minute": 79,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 80,
+      "kind": "sub",
+      "team": "EGY",
+      "text": "SUB (EGY) Tarek Hamed → Ahmed Sayed Zizo"
+    },
+    {
+      "minute": 82,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 86,
+      "kind": "goal",
+      "team": "NOR",
+      "text": "GOAL — Martin Odegaard (assist: Sander Berge, NOR)"
+    },
+    {
+      "minute": 86,
+      "kind": "tactical",
+      "team": "EGY",
+      "text": "TACTIC (EGY) 4-2-4"
+    },
+    {
+      "minute": 93,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

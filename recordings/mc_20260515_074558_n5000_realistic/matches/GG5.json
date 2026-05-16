@@ -1,0 +1,253 @@
+{
+  "match_id": "GG5",
+  "stage": "GROUP G",
+  "home": {
+    "code": "EGY",
+    "iso2": "EG",
+    "name": "Egypt",
+    "formation": "4-2-3-1",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 76,
+    "attack": 78,
+    "defense": 72,
+    "midfield": 78,
+    "keeper": 78,
+    "goals": 2
+  },
+  "away": {
+    "code": "NZL",
+    "iso2": "NZ",
+    "name": "New Zealand",
+    "formation": "5-4-1",
+    "style_tag": "parking-bus",
+    "wc_titles": 0,
+    "overall": 60,
+    "attack": 59,
+    "defense": 61,
+    "midfield": 60,
+    "keeper": 60,
+    "goals": 2
+  },
+  "score": {
+    "home": 2,
+    "away": 2,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": null,
+    "loser": null
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 9,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 9,
+      "kind": "setpiece",
+      "team": "EGY",
+      "text": "EGY CORNER"
+    },
+    {
+      "minute": 12,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY corner saved"
+    },
+    {
+      "minute": 16,
+      "kind": "goal",
+      "team": "EGY",
+      "text": "GOAL — Mohamed Salah (assist: Mostafa Mohamed, EGY)"
+    },
+    {
+      "minute": 16,
+      "kind": "tactical",
+      "team": "NZL",
+      "text": "TACTIC (NZL) 4-4-2"
+    },
+    {
+      "minute": 28,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 28,
+      "kind": "setpiece",
+      "team": "EGY",
+      "text": "EGY CORNER"
+    },
+    {
+      "minute": 31,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY corner saved"
+    },
+    {
+      "minute": 34,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 39,
+      "kind": "shot",
+      "team": "NZL",
+      "text": "NZL shot, saved"
+    },
+    {
+      "minute": 39,
+      "kind": "setpiece",
+      "team": "NZL",
+      "text": "NZL CORNER"
+    },
+    {
+      "minute": 42,
+      "kind": "shot",
+      "team": "NZL",
+      "text": "NZL corner saved"
+    },
+    {
+      "minute": 44,
+      "kind": "shot",
+      "team": "NZL",
+      "text": "NZL shot, saved"
+    },
+    {
+      "minute": 44,
+      "kind": "setpiece",
+      "team": "NZL",
+      "text": "NZL CORNER"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 50,
+      "kind": "tactical",
+      "team": "EGY",
+      "text": "TACTIC (EGY) 4-1-4-1"
+    },
+    {
+      "minute": 57,
+      "kind": "goal",
+      "team": "NZL",
+      "text": "GOAL — Michael Boxall (assist: Matthew Garbett, NZL)"
+    },
+    {
+      "minute": 66,
+      "kind": "sub",
+      "team": "EGY",
+      "text": "SUB (EGY) Omar Kamal → Ramadan Sobhi"
+    },
+    {
+      "minute": 66,
+      "kind": "goal",
+      "team": "EGY",
+      "text": "GOAL — Mohamed Salah (assist: Mostafa Mohamed, EGY)"
+    },
+    {
+      "minute": 69,
+      "kind": "sub",
+      "team": "NZL",
+      "text": "SUB (NZL) Nando Pijnaker → Kosta Barbarouses"
+    },
+    {
+      "minute": 70,
+      "kind": "sub",
+      "team": "EGY",
+      "text": "SUB (EGY) Mahmoud Hassan → Ahmed Fatouh"
+    },
+    {
+      "minute": 71,
+      "kind": "sub",
+      "team": "NZL",
+      "text": "SUB (NZL) Tyler Bindon → Ben Waine"
+    },
+    {
+      "minute": 75,
+      "kind": "sub",
+      "team": "NZL",
+      "text": "SUB (NZL) Matthew Garbett → Logan Rogerson"
+    },
+    {
+      "minute": 78,
+      "kind": "sub",
+      "team": "NZL",
+      "text": "SUB (NZL) Michael Boxall → Storm Roux"
+    },
+    {
+      "minute": 78,
+      "kind": "shot",
+      "team": "NZL",
+      "text": "NZL shot, saved"
+    },
+    {
+      "minute": 78,
+      "kind": "setpiece",
+      "team": "NZL",
+      "text": "NZL CORNER"
+    },
+    {
+      "minute": 79,
+      "kind": "sub",
+      "team": "EGY",
+      "text": "SUB (EGY) Ahmed Hegazi → Ahmed Sayed"
+    },
+    {
+      "minute": 79,
+      "kind": "sub",
+      "team": "NZL",
+      "text": "SUB (NZL) Joe Bell → Clayton Lewis"
+    },
+    {
+      "minute": 80,
+      "kind": "tactical",
+      "team": "NZL",
+      "text": "TACTIC (NZL) 4-3-3"
+    },
+    {
+      "minute": 81,
+      "kind": "goal",
+      "team": "NZL",
+      "text": "GOAL — Chris Wood (assist: Joe Bell, NZL)"
+    },
+    {
+      "minute": 88,
+      "kind": "sub",
+      "team": "EGY",
+      "text": "SUB (EGY) Emam Ashour → Tarek Hamed"
+    },
+    {
+      "minute": 94,
+      "kind": "shot",
+      "team": "EGY",
+      "text": "EGY shot, saved"
+    },
+    {
+      "minute": 94,
+      "kind": "setpiece",
+      "team": "EGY",
+      "text": "EGY CORNER"
+    },
+    {
+      "minute": 95,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

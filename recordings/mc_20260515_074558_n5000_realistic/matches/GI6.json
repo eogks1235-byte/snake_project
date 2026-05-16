@@ -1,0 +1,307 @@
+{
+  "match_id": "GI6",
+  "stage": "GROUP I",
+  "home": {
+    "code": "IRQ",
+    "iso2": "IQ",
+    "name": "Iraq",
+    "formation": "5-4-1",
+    "style_tag": "parking-bus",
+    "wc_titles": 0,
+    "overall": 68,
+    "attack": 65,
+    "defense": 68,
+    "midfield": 70,
+    "keeper": 68,
+    "goals": 1
+  },
+  "away": {
+    "code": "NOR",
+    "iso2": "NO",
+    "name": "Norway",
+    "formation": "4-4-2",
+    "style_tag": "counter",
+    "wc_titles": 0,
+    "overall": 76,
+    "attack": 78,
+    "defense": 78,
+    "midfield": 77,
+    "keeper": 73,
+    "goals": 2
+  },
+  "score": {
+    "home": 1,
+    "away": 2,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "NOR",
+    "loser": "IRQ"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 4,
+      "kind": "goal",
+      "team": "NOR",
+      "text": "GOAL — Sander Berge (assist: Fredrik Aursnes, NOR)"
+    },
+    {
+      "minute": 4,
+      "kind": "tactical",
+      "team": "IRQ",
+      "text": "TACTIC (IRQ) 4-4-2"
+    },
+    {
+      "minute": 12,
+      "kind": "shot",
+      "team": "IRQ",
+      "text": "IRQ shot, saved"
+    },
+    {
+      "minute": 12,
+      "kind": "setpiece",
+      "team": "IRQ",
+      "text": "IRQ CORNER"
+    },
+    {
+      "minute": 15,
+      "kind": "shot",
+      "team": "IRQ",
+      "text": "IRQ corner saved"
+    },
+    {
+      "minute": 18,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 18,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 21,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR corner saved"
+    },
+    {
+      "minute": 24,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 24,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 27,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR corner saved"
+    },
+    {
+      "minute": 32,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 32,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 35,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR corner saved"
+    },
+    {
+      "minute": 38,
+      "kind": "shot",
+      "team": "IRQ",
+      "text": "IRQ shot, saved"
+    },
+    {
+      "minute": 38,
+      "kind": "setpiece",
+      "team": "IRQ",
+      "text": "IRQ CORNER"
+    },
+    {
+      "minute": 41,
+      "kind": "goal",
+      "team": "IRQ",
+      "text": "GOAL — Bashar Resan (assist: Aymen Hussein, IRQ)"
+    },
+    {
+      "minute": 41,
+      "kind": "tactical",
+      "team": "IRQ",
+      "text": "TACTIC (IRQ) 5-4-1"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 59,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 60,
+      "kind": "sub",
+      "team": "IRQ",
+      "text": "SUB (IRQ) Manaf Younis → Mohanad Ali"
+    },
+    {
+      "minute": 63,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 64,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Stefan Strandberg → Mohamed Elyounoussi"
+    },
+    {
+      "minute": 65,
+      "kind": "shot",
+      "team": "IRQ",
+      "text": "IRQ shot, saved"
+    },
+    {
+      "minute": 65,
+      "kind": "setpiece",
+      "team": "IRQ",
+      "text": "IRQ CORNER"
+    },
+    {
+      "minute": 67,
+      "kind": "sub",
+      "team": "IRQ",
+      "text": "SUB (IRQ) Ahmed Yahya → Ali Al-Hamadi"
+    },
+    {
+      "minute": 68,
+      "kind": "shot",
+      "team": "IRQ",
+      "text": "IRQ corner saved"
+    },
+    {
+      "minute": 70,
+      "kind": "shot",
+      "team": "IRQ",
+      "text": "IRQ shot, saved"
+    },
+    {
+      "minute": 75,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 75,
+      "kind": "setpiece",
+      "team": "NOR",
+      "text": "NOR CORNER"
+    },
+    {
+      "minute": 77,
+      "kind": "sub",
+      "team": "IRQ",
+      "text": "SUB (IRQ) Hassan Ali → Zidane Iqbal"
+    },
+    {
+      "minute": 77,
+      "kind": "goal",
+      "team": "NOR",
+      "text": "GOAL — Martin Odegaard (assist: Erling Haaland, NOR)"
+    },
+    {
+      "minute": 77,
+      "kind": "tactical",
+      "team": "IRQ",
+      "text": "TACTIC (IRQ) 4-3-3"
+    },
+    {
+      "minute": 77,
+      "kind": "tactical",
+      "team": "NOR",
+      "text": "TACTIC (NOR) 4-1-4-1"
+    },
+    {
+      "minute": 81,
+      "kind": "sub",
+      "team": "IRQ",
+      "text": "SUB (IRQ) Rebin Sulaka → Mohammed Qasim"
+    },
+    {
+      "minute": 84,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Leo Ostigard → Birger Meling"
+    },
+    {
+      "minute": 85,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Julian Ryerson → Jorgen Strand Larsen"
+    },
+    {
+      "minute": 86,
+      "kind": "sub",
+      "team": "IRQ",
+      "text": "SUB (IRQ) Mustafa Nadhim → Sherko Karim"
+    },
+    {
+      "minute": 86,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Fredrik Aursnes → Patrick Berg"
+    },
+    {
+      "minute": 88,
+      "kind": "sub",
+      "team": "NOR",
+      "text": "SUB (NOR) Kristoffer Ajer → Mathias Normann"
+    },
+    {
+      "minute": 91,
+      "kind": "shot",
+      "team": "IRQ",
+      "text": "IRQ shot, saved"
+    },
+    {
+      "minute": 93,
+      "kind": "shot",
+      "team": "NOR",
+      "text": "NOR shot, saved"
+    },
+    {
+      "minute": 94,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

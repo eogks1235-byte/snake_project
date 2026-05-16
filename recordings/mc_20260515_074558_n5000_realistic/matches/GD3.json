@@ -1,0 +1,253 @@
+{
+  "match_id": "GD3",
+  "stage": "GROUP D",
+  "home": {
+    "code": "USA",
+    "iso2": "US",
+    "name": "USA",
+    "formation": "4-2-3-1",
+    "style_tag": "balanced",
+    "wc_titles": 0,
+    "overall": 82,
+    "attack": 84,
+    "defense": 82,
+    "midfield": 78,
+    "keeper": 82,
+    "goals": 3
+  },
+  "away": {
+    "code": "TUR",
+    "iso2": "TR",
+    "name": "Türkiye",
+    "formation": "4-2-3-1",
+    "style_tag": "balanced",
+    "wc_titles": 0,
+    "overall": 78,
+    "attack": 82,
+    "defense": 76,
+    "midfield": 75,
+    "keeper": 79,
+    "goals": 1
+  },
+  "score": {
+    "home": 3,
+    "away": 1,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "USA",
+    "loser": "TUR"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 7,
+      "kind": "goal",
+      "team": "TUR",
+      "text": "GOAL — Kenan Yildiz (assist: Hakan Calhanoglu, TUR)"
+    },
+    {
+      "minute": 7,
+      "kind": "tactical",
+      "team": "USA",
+      "text": "TACTIC (USA) 4-2-4"
+    },
+    {
+      "minute": 16,
+      "kind": "shot",
+      "team": "USA",
+      "text": "USA shot, saved"
+    },
+    {
+      "minute": 21,
+      "kind": "shot",
+      "team": "TUR",
+      "text": "TUR shot, saved"
+    },
+    {
+      "minute": 21,
+      "kind": "setpiece",
+      "team": "TUR",
+      "text": "TUR CORNER"
+    },
+    {
+      "minute": 24,
+      "kind": "shot",
+      "team": "TUR",
+      "text": "TUR corner saved"
+    },
+    {
+      "minute": 29,
+      "kind": "shot",
+      "team": "USA",
+      "text": "USA shot, saved"
+    },
+    {
+      "minute": 29,
+      "kind": "setpiece",
+      "team": "USA",
+      "text": "USA CORNER"
+    },
+    {
+      "minute": 32,
+      "kind": "goal",
+      "team": "USA",
+      "text": "GOAL — Weston McKennie (assist: Gio Reyna, USA)"
+    },
+    {
+      "minute": 32,
+      "kind": "tactical",
+      "team": "USA",
+      "text": "TACTIC (USA) 4-3-3"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 56,
+      "kind": "shot",
+      "team": "USA",
+      "text": "USA shot, saved"
+    },
+    {
+      "minute": 56,
+      "kind": "setpiece",
+      "team": "USA",
+      "text": "USA CORNER"
+    },
+    {
+      "minute": 59,
+      "kind": "shot",
+      "team": "USA",
+      "text": "USA corner saved"
+    },
+    {
+      "minute": 60,
+      "kind": "sub",
+      "team": "USA",
+      "text": "SUB (USA) Chris Richards → Folarin Balogun"
+    },
+    {
+      "minute": 60,
+      "kind": "sub",
+      "team": "TUR",
+      "text": "SUB (TUR) Mert Muldur → Orkun Kokcu"
+    },
+    {
+      "minute": 61,
+      "kind": "sub",
+      "team": "TUR",
+      "text": "SUB (TUR) Zeki Celik → Salih Ozcan"
+    },
+    {
+      "minute": 61,
+      "kind": "shot",
+      "team": "TUR",
+      "text": "TUR shot, saved"
+    },
+    {
+      "minute": 61,
+      "kind": "setpiece",
+      "team": "TUR",
+      "text": "TUR CORNER"
+    },
+    {
+      "minute": 64,
+      "kind": "shot",
+      "team": "TUR",
+      "text": "TUR corner saved"
+    },
+    {
+      "minute": 68,
+      "kind": "sub",
+      "team": "USA",
+      "text": "SUB (USA) Cameron Carter-Vickers → Ricardo Pepi"
+    },
+    {
+      "minute": 72,
+      "kind": "goal",
+      "team": "USA",
+      "text": "GOAL — Tyler Adams (assist: Johnny Cardoso, USA)"
+    },
+    {
+      "minute": 72,
+      "kind": "tactical",
+      "team": "USA",
+      "text": "TACTIC (USA) 4-1-4-1"
+    },
+    {
+      "minute": 72,
+      "kind": "tactical",
+      "team": "TUR",
+      "text": "TACTIC (TUR) 4-2-4"
+    },
+    {
+      "minute": 77,
+      "kind": "sub",
+      "team": "USA",
+      "text": "SUB (USA) Gio Reyna → Tim Ream"
+    },
+    {
+      "minute": 79,
+      "kind": "sub",
+      "team": "USA",
+      "text": "SUB (USA) Johnny Cardoso → Joe Scally"
+    },
+    {
+      "minute": 81,
+      "kind": "sub",
+      "team": "USA",
+      "text": "SUB (USA) Antonee Robinson → Tim Weah"
+    },
+    {
+      "minute": 82,
+      "kind": "shot",
+      "team": "TUR",
+      "text": "TUR shot, saved"
+    },
+    {
+      "minute": 83,
+      "kind": "goal",
+      "team": "USA",
+      "text": "GOAL — Tim Weah (assist: Weston McKennie, USA)"
+    },
+    {
+      "minute": 86,
+      "kind": "sub",
+      "team": "TUR",
+      "text": "SUB (TUR) Caglar Soyuncu → Yunus Akgun"
+    },
+    {
+      "minute": 93,
+      "kind": "shot",
+      "team": "USA",
+      "text": "USA shot, saved"
+    },
+    {
+      "minute": 93,
+      "kind": "setpiece",
+      "team": "USA",
+      "text": "USA CORNER"
+    },
+    {
+      "minute": 96,
+      "kind": "shot",
+      "team": "USA",
+      "text": "USA corner saved"
+    },
+    {
+      "minute": 97,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

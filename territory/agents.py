@@ -1,7 +1,9 @@
-"""규칙 기반 에이전트 4종 — 캐릭터별 점수 함수로 차별화"""
+"""규칙 기반 에이전트 — 캐릭터별 점수 함수로 차별화"""
 import random
 from collections import deque
 from dataclasses import dataclass
+
+from .grid import WALL
 
 # 방향: 0=상, 1=우, 2=하, 3=좌
 DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]
@@ -377,9 +379,203 @@ class PatriotAgent(Agent):
         return pick_direction(context.grid, state, context.rng, score)
 
 
-# 매 판 랜덤 픽용 풀 (15종)
+# ──────────────────────────────────────────────────────────────
+# 아이템 인식 에이전트
+# ──────────────────────────────────────────────────────────────
+
+class HoarderAgent(Agent):
+    """가장 가까운 아이템(맨해튼 거리)으로 직진."""
+
+    def __init__(self, agent_id: int, color: tuple = (255, 215, 90)):
+        super().__init__(agent_id, 'Hoarder', color, 'Bee-lines for items')
+
+    def act(self, state, context):
+        items = context.items
+        if not items:
+            return pick_direction(context.grid, state, context.rng, lambda *a: 1)
+        target = min(items, key=lambda it: abs(it.x - state.x) + abs(it.y - state.y))
+
+        def score(d, nx, ny, _s):
+            return -(abs(target.x - nx) + abs(target.y - ny))
+
+        return pick_direction(context.grid, state, context.rng, score)
+
+
+class SaboteurAgent(Agent):
+    """우리가 가장 유리한 아이템(상대보다 가까운)으로 가서 가로채기."""
+
+    def __init__(self, agent_id: int, color: tuple = (168, 85, 247)):
+        super().__init__(agent_id, 'Saboteur', color, "Steals enemy items")
+
+    def act(self, state, context):
+        items = context.items
+        rivals = [a for a in context.agent_states.values() if a.agent_id != self.id]
+        if not items:
+            return pick_direction(context.grid, state, context.rng, lambda *a: 1)
+
+        best_item = items[0]
+        best_margin = None
+        for it in items:
+            our_d = abs(it.x - state.x) + abs(it.y - state.y)
+            their_d = (min(abs(r.x - it.x) + abs(r.y - it.y) for r in rivals)
+                       if rivals else 9999)
+            margin = their_d - our_d  # 양수일수록 우리가 유리
+            if best_margin is None or margin > best_margin:
+                best_margin = margin
+                best_item = it
+
+        target = best_item
+
+        def score(d, nx, ny, _s):
+            return -(abs(target.x - nx) + abs(target.y - ny))
+
+        return pick_direction(context.grid, state, context.rng, score)
+
+
+# ──────────────────────────────────────────────────────────────
+# 맵 인식 에이전트
+# ──────────────────────────────────────────────────────────────
+
+class CartographerAgent(Agent):
+    """벽 인접 + 통로 (인접 빈 칸 ≤ 2) 우선 — 좁은 길목 점거."""
+
+    def __init__(self, agent_id: int, color: tuple = (217, 119, 6)):
+        super().__init__(agent_id, 'Cartographer', color, 'Camps choke points')
+
+    def act(self, state, context):
+        grid = context.grid
+
+        def score(d, nx, ny, _s):
+            wall_count = 0
+            empty_count = 0
+            for ddx, ddy in DIRECTIONS:
+                ax, ay = nx + ddx, ny + ddy
+                if not grid.in_bounds(ax, ay):
+                    wall_count += 1  # 격자 밖도 벽 취급
+                    continue
+                cell = int(grid.cells[ay, ax])
+                if cell == WALL:
+                    wall_count += 1
+                elif cell == 0:
+                    empty_count += 1
+            s = wall_count * 3
+            if empty_count <= 2:
+                s += 5  # 좁은 통로 보너스
+            return s
+
+        return pick_direction(context.grid, state, context.rng, score)
+
+
+# ──────────────────────────────────────────────────────────────
+# 상태 머신 에이전트
+# ──────────────────────────────────────────────────────────────
+
+class PhoenixAgent(Agent):
+    """영토 < 10%면 광폭(Aggressor), > 30%면 농성(Defender), 사이는 탐욕(Greedy)."""
+
+    def __init__(self, agent_id: int, color: tuple = (244, 63, 94)):
+        super().__init__(agent_id, 'Phoenix', color, 'Berserk → calm by area')
+
+    def act(self, state, context):
+        my_area = context.areas.get(self.id, 0)
+        total = context.grid.total_cells()
+        pct = my_area / total if total else 0
+        grid = context.grid
+
+        if pct < 0.10:
+            def score(d, nx, ny, _s):
+                for ddx, ddy in DIRECTIONS:
+                    ax, ay = nx + ddx, ny + ddy
+                    if not grid.in_bounds(ax, ay):
+                        continue
+                    cell = int(grid.cells[ay, ax])
+                    if cell != 0 and cell != self.id and cell != WALL:
+                        return 11
+                return 1
+        elif pct > 0.30:
+            def score(d, nx, ny, _s):
+                count = 0
+                for ddx, ddy in DIRECTIONS:
+                    ax, ay = nx + ddx, ny + ddy
+                    if (grid.in_bounds(ax, ay)
+                            and int(grid.cells[ay, ax]) == self.id):
+                        count += 1
+                return count
+        else:
+            def score(d, nx, ny, _s):
+                count = 0
+                for ddx, ddy in DIRECTIONS:
+                    ax, ay = nx + ddx, ny + ddy
+                    if (grid.in_bounds(ax, ay)
+                            and int(grid.cells[ay, ax]) == 0):
+                        count += 1
+                return count
+
+        return pick_direction(context.grid, state, context.rng, score)
+
+
+class SleeperAgent(Agent):
+    """첫 SLEEP_TICKS는 정지, 이후 가장 가까운 적 헤드 추적 (Charger)."""
+
+    SLEEP_TICKS = 60
+
+    def __init__(self, agent_id: int, color: tuple = (99, 102, 241)):
+        super().__init__(agent_id, 'Sleeper', color, 'Naps then attacks')
+        self.elapsed = 0
+
+    def act(self, state, context):
+        self.elapsed += 1
+        if self.elapsed <= self.SLEEP_TICKS:
+            return None  # zzz — 시뮬레이션이 정지로 처리
+
+        rivals = [a for a in context.agent_states.values() if a.agent_id != self.id]
+        if not rivals:
+            return pick_direction(context.grid, state, context.rng, lambda *a: 1)
+        target = min(rivals, key=lambda a: abs(a.x - state.x) + abs(a.y - state.y))
+
+        def score(d, nx, ny, _s):
+            return -(abs(target.x - nx) + abs(target.y - ny))
+
+        return pick_direction(context.grid, state, context.rng, score)
+
+
+# ──────────────────────────────────────────────────────────────
+# 행동 모방 에이전트
+# ──────────────────────────────────────────────────────────────
+
+class MimicAgent(Agent):
+    """매 REFRESH tick마다 1등의 last_action을 복사 — 행동 모방."""
+
+    REFRESH = 5
+
+    def __init__(self, agent_id: int, color: tuple = (45, 212, 191)):
+        super().__init__(agent_id, 'Mimic', color, 'Copies leader actions')
+        self.preferred = None
+        self.tick = 0
+
+    def act(self, state, context):
+        self.tick += 1
+        if self.preferred is None or self.tick % self.REFRESH == 0:
+            leader = context.get_rank_state(1, exclude_id=self.id)
+            if leader is not None:
+                self.preferred = leader.last_action
+        opp = (self.preferred + 2) % 4 if self.preferred is not None else None
+
+        def score(d, nx, ny, _s):
+            if d == self.preferred:
+                return 5
+            if d == opp:
+                return 0
+            return 2
+
+        return pick_direction(context.grid, state, context.rng, score)
+
+
+# 매 판 랜덤 픽용 풀 (21종)
 ALGORITHM_POOL = [
     TrollAgent, MirrorAgent, BoomerangAgent, AntiMimicAgent,
     RandomAgent, GreedyAgent, DefenderAgent, AggressorAgent, HermitAgent,
     ScoutAgent, PioneerAgent, SpiralAgent, CompassAgent, ChargerAgent, PatriotAgent,
+    HoarderAgent, SaboteurAgent, CartographerAgent,
+    PhoenixAgent, SleeperAgent, MimicAgent,
 ]

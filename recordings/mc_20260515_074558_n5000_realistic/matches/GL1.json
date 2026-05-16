@@ -1,0 +1,307 @@
+{
+  "match_id": "GL1",
+  "stage": "GROUP L",
+  "home": {
+    "code": "ENG",
+    "iso2": "GB",
+    "name": "England",
+    "formation": "4-2-3-1",
+    "style_tag": "balanced",
+    "wc_titles": 1,
+    "overall": 90,
+    "attack": 89,
+    "defense": 86,
+    "midfield": 93,
+    "keeper": 90,
+    "goals": 2
+  },
+  "away": {
+    "code": "CRO",
+    "iso2": "HR",
+    "name": "Croatia",
+    "formation": "3-5-2",
+    "style_tag": "possession",
+    "wc_titles": 0,
+    "overall": 87,
+    "attack": 87,
+    "defense": 88,
+    "midfield": 87,
+    "keeper": 86,
+    "goals": 1
+  },
+  "score": {
+    "home": 2,
+    "away": 1,
+    "went_to_pk": false,
+    "pk_home": null,
+    "pk_away": null,
+    "winner": "ENG",
+    "loser": "CRO"
+  },
+  "events": [
+    {
+      "minute": 0,
+      "kind": "kickoff",
+      "team": null,
+      "text": "KICK-OFF"
+    },
+    {
+      "minute": 2,
+      "kind": "shot",
+      "team": "ENG",
+      "text": "ENG shot, saved"
+    },
+    {
+      "minute": 5,
+      "kind": "setpiece",
+      "team": "CRO",
+      "text": "CRO FREE KICK"
+    },
+    {
+      "minute": 8,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO free_kick saved"
+    },
+    {
+      "minute": 14,
+      "kind": "shot",
+      "team": "ENG",
+      "text": "ENG shot, saved"
+    },
+    {
+      "minute": 14,
+      "kind": "setpiece",
+      "team": "ENG",
+      "text": "ENG CORNER"
+    },
+    {
+      "minute": 17,
+      "kind": "goal",
+      "team": "ENG",
+      "text": "GOAL — Conor Gallagher (assist: Declan Rice, ENG)"
+    },
+    {
+      "minute": 17,
+      "kind": "tactical",
+      "team": "CRO",
+      "text": "TACTIC (CRO) 3-4-3"
+    },
+    {
+      "minute": 39,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO shot, saved"
+    },
+    {
+      "minute": 41,
+      "kind": "goal",
+      "team": "CRO",
+      "text": "GOAL — Andrej Kramaric (assist: Borna Sosa, CRO)"
+    },
+    {
+      "minute": 45,
+      "kind": "half",
+      "team": null,
+      "text": "HALF TIME"
+    },
+    {
+      "minute": 50,
+      "kind": "tactical",
+      "team": "CRO",
+      "text": "TACTIC (CRO) 5-4-1"
+    },
+    {
+      "minute": 54,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO shot, saved"
+    },
+    {
+      "minute": 54,
+      "kind": "setpiece",
+      "team": "CRO",
+      "text": "CRO CORNER"
+    },
+    {
+      "minute": 55,
+      "kind": "tactical",
+      "team": "ENG",
+      "text": "TACTIC (ENG) 4-3-3"
+    },
+    {
+      "minute": 57,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO corner saved"
+    },
+    {
+      "minute": 58,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO shot, saved"
+    },
+    {
+      "minute": 58,
+      "kind": "setpiece",
+      "team": "CRO",
+      "text": "CRO CORNER"
+    },
+    {
+      "minute": 60,
+      "kind": "sub",
+      "team": "CRO",
+      "text": "SUB (CRO) Borna Sosa → Bruno Petkovic"
+    },
+    {
+      "minute": 61,
+      "kind": "sub",
+      "team": "ENG",
+      "text": "SUB (ENG) Conor Gallagher → Bukayo Saka"
+    },
+    {
+      "minute": 61,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO corner saved"
+    },
+    {
+      "minute": 62,
+      "kind": "sub",
+      "team": "CRO",
+      "text": "SUB (CRO) Nikola Vlasic → Josip Stanisic"
+    },
+    {
+      "minute": 63,
+      "kind": "sub",
+      "team": "ENG",
+      "text": "SUB (ENG) Marc Guehi → Luke Shaw"
+    },
+    {
+      "minute": 65,
+      "kind": "sub",
+      "team": "ENG",
+      "text": "SUB (ENG) Kyle Walker → Lewis Dunk"
+    },
+    {
+      "minute": 65,
+      "kind": "shot",
+      "team": "ENG",
+      "text": "ENG shot, saved"
+    },
+    {
+      "minute": 65,
+      "kind": "setpiece",
+      "team": "CRO",
+      "text": "CRO FREE KICK"
+    },
+    {
+      "minute": 66,
+      "kind": "sub",
+      "team": "CRO",
+      "text": "SUB (CRO) Josip Sutalo → Mislav Orsic"
+    },
+    {
+      "minute": 68,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO free_kick saved"
+    },
+    {
+      "minute": 70,
+      "kind": "sub",
+      "team": "CRO",
+      "text": "SUB (CRO) Domagoj Vida → Martin Erlic"
+    },
+    {
+      "minute": 70,
+      "kind": "shot",
+      "team": "ENG",
+      "text": "ENG shot, saved"
+    },
+    {
+      "minute": 71,
+      "kind": "sub",
+      "team": "CRO",
+      "text": "SUB (CRO) Mario Pasalic → Ante Budimir"
+    },
+    {
+      "minute": 72,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO shot, saved"
+    },
+    {
+      "minute": 74,
+      "kind": "sub",
+      "team": "ENG",
+      "text": "SUB (ENG) John Stones → Anthony Gordon"
+    },
+    {
+      "minute": 76,
+      "kind": "goal",
+      "team": "ENG",
+      "text": "GOAL — Cole Palmer (assist: Trent Alexander-Arnold, ENG)"
+    },
+    {
+      "minute": 76,
+      "kind": "tactical",
+      "team": "ENG",
+      "text": "TACTIC (ENG) 4-1-4-1"
+    },
+    {
+      "minute": 76,
+      "kind": "tactical",
+      "team": "CRO",
+      "text": "TACTIC (CRO) 3-4-3"
+    },
+    {
+      "minute": 78,
+      "kind": "sub",
+      "team": "ENG",
+      "text": "SUB (ENG) Trent Alexander-Arnold → Ollie Watkins"
+    },
+    {
+      "minute": 86,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO shot, saved"
+    },
+    {
+      "minute": 87,
+      "kind": "shot",
+      "team": "ENG",
+      "text": "ENG shot, saved"
+    },
+    {
+      "minute": 89,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO shot, saved"
+    },
+    {
+      "minute": 91,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO shot, saved"
+    },
+    {
+      "minute": 91,
+      "kind": "setpiece",
+      "team": "CRO",
+      "text": "CRO CORNER"
+    },
+    {
+      "minute": 94,
+      "kind": "shot",
+      "team": "CRO",
+      "text": "CRO corner saved"
+    },
+    {
+      "minute": 96,
+      "kind": "fulltime",
+      "team": null,
+      "text": "FULL TIME"
+    }
+  ]
+}

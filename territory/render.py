@@ -17,6 +17,7 @@ BAR_TRACK = (40, 44, 54)
 HEAD_OUTLINE = (255, 255, 255)
 INVULN_OUTLINE = (255, 215, 90)
 FLASH_COLOR = (255, 255, 255)
+WALL_COLOR = (60, 65, 75)         # 벽 색 (다크 그레이)
 
 
 class Renderer:
@@ -65,10 +66,13 @@ class Renderer:
         self._gridline_overlay = self._build_gridline_overlay()
 
     def _build_color_lookup(self) -> np.ndarray:
-        lookup = np.zeros((len(self.agents) + 1, 3), dtype=np.uint8)
+        # +2 슬롯: 0(빈 칸), 1..N(에이전트), 마지막 슬롯=벽
+        # numpy 음수 인덱싱 덕분에 cells 값 -1 (WALL) 은 자동으로 마지막 슬롯을 가리킨다.
+        lookup = np.zeros((len(self.agents) + 2, 3), dtype=np.uint8)
         lookup[0] = GRID_BG
         for agent in self.agents:
             lookup[agent.id] = agent.color
+        lookup[-1] = WALL_COLOR
         return lookup
 
     def _build_gridline_overlay(self) -> pygame.Surface:
@@ -152,7 +156,8 @@ class Renderer:
 
     def _draw_header(self, fast_forward: bool):
         title = self.font_title.render('TERRITORY WAR', True, TEXT_PRIMARY)
-        subtitle = f'{len(self.agents)} algorithms compete for area'
+        map_name = getattr(self.sim, 'map_name', 'open')
+        subtitle = f'{len(self.agents)} algorithms · map: {map_name}'
         sub = self.font_sub.render(subtitle, True, TEXT_SECONDARY)
         self.screen.blit(title, (self.margin_x, 22))
         self.screen.blit(sub, (self.margin_x, 56))
