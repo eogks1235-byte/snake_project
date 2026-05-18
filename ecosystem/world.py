@@ -17,6 +17,10 @@ from .entities import (
     CARN_INIT_E, CARN_REPRODUCE, CARN_REPRODUCE_COST, CARN_MAX_E, CARN_HUNT_GAIN,
     CARN_KILL_RADIUS,
     CARN_W_COHESION, CARN_W_ALIGN, CARN_W_SEPARATE, CARN_W_HUNT, CARN_W_NOISE,
+    Carrion, CARRION_PLANT_PROB,
+    FearMark, FEAR_FORCE,
+    DAY_CYCLE_LEN, DAY_GROW_SPAN,
+    FOUNDER_MIN_CHILDREN, ELDER_MIN_AGE,
 )
 from .spatial import SpatialHash
 
@@ -31,6 +35,9 @@ MAX_HERB = 280
 MAX_CARN = 80
 PLANT_FLOOR_REGEN = 2        # 식물이 너무 적으면 자연 재생 (사이클 회복)
 PLANT_FLOOR_THRESHOLD = 80
+
+MAX_CARRIONS = 200            # 시뮬 성능 보호 — 시체가 무한히 쌓이지 않게
+MAX_FEAR_MARKS = 160          # 사냥 마크 cap
 
 
 def _wrap_delta(d: float, span: float) -> float:
@@ -48,6 +55,8 @@ class World:
         self.plants: List[Plant] = []
         self.herbivores: List[Herbivore] = []
         self.carnivores: List[Carnivore] = []
+        self.carrions: List[Carrion] = []
+        self.fear_marks: List[FearMark] = []
 
         # 공간 해시 — 매 tick rebuild
         self.plant_grid = SpatialHash()
@@ -59,7 +68,28 @@ class World:
         self.deaths = {'herb_old': 0, 'herb_starve': 0, 'herb_killed': 0,
                        'carn_old': 0, 'carn_starve': 0}
 
+        # 가계도 추적 — 시조/장로
+        self._id_counter = 0
+        self.founder: Optional[object] = None
+        self.elder: Optional[object] = None
+
         self._spawn_initial()
+
+    def _next_id(self) -> int:
+        i = self._id_counter
+        self._id_counter += 1
+        return i
+
+    # ── 낮/밤 사이클 ─────────────────────────────────────
+
+    def day_phase(self) -> float:
+        """0~1 — 0 새벽, 0.25 정오, 0.5 황혼, 0.75 한밤."""
+        return (self.tick % DAY_CYCLE_LEN) / DAY_CYCLE_LEN
+
+    def day_light(self) -> float:
+        """0(밤) ~ 1(낮). sin으로 부드럽게."""
+        # phase 0(새벽) → light 0.5, 0.25(정오) → 1.0, 0.5(황혼) → 0.5, 0.75(한밤) → 0
+        return 0.5 + 0.5 * math.sin(self.day_phase() * math.tau - math.pi / 2)
 
     def _spawn_initial(self):
         for _ in range(INITIAL_PLANTS):
@@ -74,6 +104,7 @@ class World:
                 y=self.rng.uniform(0, WORLD_H),
                 vx=self.rng.uniform(-1, 1),
                 vy=self.rng.uniform(-1, 1),
+                id=self._next_id(),
             ))
         for _ in range(INITIAL_CARN):
             self.carnivores.append(Carnivore(
@@ -81,6 +112,7 @@ class World:
                 y=self.rng.uniform(0, WORLD_H),
                 vx=self.rng.uniform(-1, 1),
                 vy=self.rng.uniform(-1, 1),
+                id=self._next_id(),
             ))
 
     # ── 메인 루프 ─────────────────────────────────────────
@@ -92,6 +124,9 @@ class World:
         self.herb_grid.build(self.herbivores)
         self.carn_grid.build(self.carnivores)
 
+        self._update_carrions()
+        self._update_fear_marks()
+
         self._update_plants()
         # 식물 목록 변경되었으니 plant_grid rebuild
         self.plant_grid.build(self.plants)
@@ -100,16 +135,110 @@ class World:
         self.herb_grid.build(self.herbivores)
 
         self._update_carnivores()
+        self._compute_founder_elder()
         self._record_history()
+
+    # ── Carrion (시체 → 흙) ─────────────────────────────
+
+    def _update_carrions(self):
+        new_plants: List[Plant] = []
+        plant_room = MAX_PLANTS - len(self.plants)
+        for c in self.carrions:
+            if not c.alive:
+                continue
+            c.age += 1
+            # 분해되며 가끔 그 자리에 새 식물 — 죽음이 다시 생명이 된다
+            if (plant_room > 0
+                    and self.rng.random() < CARRION_PLANT_PROB):
+                a = self.rng.uniform(0, math.tau)
+                r = self.rng.uniform(2, 12)
+                nx = (c.x + math.cos(a) * r) % WORLD_W
+                ny = (c.y + math.sin(a) * r) % WORLD_H
+                new_plants.append(Plant(x=nx, y=ny, growth=0.0))
+                self.births['plant'] += 1
+                plant_room -= 1
+            if c.age >= c.lifespan:
+                c.alive = False
+        self.carrions = [c for c in self.carrions if c.alive]
+        if new_plants:
+            self.plants.extend(new_plants)
+
+    def _add_carrion(self, x: float, y: float, species: str):
+        if len(self.carrions) >= MAX_CARRIONS:
+            # 가장 오래된 것을 밀어냄 (자연스러운 fade)
+            self.carrions.pop(0)
+        self.carrions.append(Carrion(x=x, y=y, species=species))
+
+    # ── FearMark (공포의 풍경) ───────────────────────────
+
+    def _update_fear_marks(self):
+        for fm in self.fear_marks:
+            if not fm.alive:
+                continue
+            fm.age += 1
+            if fm.age >= fm.lifespan:
+                fm.alive = False
+        self.fear_marks = [fm for fm in self.fear_marks if fm.alive]
+
+    def _add_fear_mark(self, x: float, y: float):
+        if len(self.fear_marks) >= MAX_FEAR_MARKS:
+            self.fear_marks.pop(0)
+        self.fear_marks.append(FearMark(x=x, y=y))
+
+    def _fear_force_at(self, x: float, y: float) -> Tuple[float, float]:
+        """위치(x,y)에서 받는 공포의 가속도 — 가까운 마크들에서 멀어지는 방향."""
+        ax = ay = 0.0
+        for fm in self.fear_marks:
+            dx = _wrap_delta(x - fm.x, WORLD_W)
+            dy = _wrap_delta(y - fm.y, WORLD_H)
+            d2 = dx * dx + dy * dy
+            r2 = fm.radius * fm.radius
+            if d2 < r2 and d2 > 0:
+                d = math.sqrt(d2)
+                intensity = (1.0 - fm.age / fm.lifespan) * (1.0 - d / fm.radius)
+                ax += (dx / d) * FEAR_FORCE * intensity
+                ay += (dy / d) * FEAR_FORCE * intensity
+        return ax, ay
+
+    # ── Founder / Elder ─────────────────────────────────
+
+    def _compute_founder_elder(self):
+        best_kids = -1
+        best_age = -1
+        founder = None
+        elder = None
+        for a in self.herbivores:
+            if not a.alive:
+                continue
+            if a.children > best_kids:
+                best_kids = a.children
+                founder = a
+            if a.age > best_age:
+                best_age = a.age
+                elder = a
+        for a in self.carnivores:
+            if not a.alive:
+                continue
+            if a.children > best_kids:
+                best_kids = a.children
+                founder = a
+            if a.age > best_age:
+                best_age = a.age
+                elder = a
+        self.founder = founder if best_kids >= FOUNDER_MIN_CHILDREN else None
+        self.elder = elder if best_age >= ELDER_MIN_AGE else None
 
     # ── 식물 ────────────────────────────────────────────
 
     def _update_plants(self):
         new_plants = []
+        # 낮/밤 사이클 — 햇빛에 따라 성장 속도 변조
+        light = self.day_light()
+        grow_rate = PLANT_GROW_RATE * (1.0 - DAY_GROW_SPAN + 2.0 * DAY_GROW_SPAN * light)
         for p in self.plants:
             if not p.alive:
                 continue
-            p.growth = min(PLANT_MAX_GROWTH, p.growth + PLANT_GROW_RATE)
+            p.growth = min(PLANT_MAX_GROWTH, p.growth + grow_rate)
             if (p.growth >= PLANT_MAX_GROWTH * 0.8
                     and len(self.plants) + len(new_plants) < MAX_PLANTS
                     and self.rng.random() < PLANT_SPAWN_PROB):
@@ -151,6 +280,11 @@ class World:
                 d = math.hypot(dx, dy) or 1.0
                 ax += (dx / d) * HERB_W_FLEE
                 ay += (dy / d) * HERB_W_FLEE
+
+            # 공포의 풍경 — 사냥의 흔적이 살아있는 자를 더 오래 쫓는다
+            fax, fay = self._fear_force_at(h.x, h.y)
+            ax += fax
+            ay += fay
 
             # 식물 — 가장 가까운 자란 식물
             target_plant = self._nearest_plant(h.x, h.y, HERB_VISION)
@@ -202,9 +336,11 @@ class World:
             if h.energy <= 0:
                 h.alive = False
                 self.deaths['herb_starve'] += 1
+                self._add_carrion(h.x, h.y, 'herb')
             elif h.age > 1500:
                 h.alive = False
                 self.deaths['herb_old'] += 1
+                self._add_carrion(h.x, h.y, 'herb')
             elif (h.energy >= HERB_REPRODUCE
                     and len(self.herbivores) + len(new_kids) < MAX_HERB):
                 h.energy -= HERB_REPRODUCE_COST
@@ -216,7 +352,10 @@ class World:
                     vx=self.rng.uniform(-1, 1),
                     vy=self.rng.uniform(-1, 1),
                     energy=HERB_REPRODUCE_COST * 0.8,
+                    id=self._next_id(),
+                    parent_id=h.id,
                 ))
+                h.children += 1
                 self.births['herb'] += 1
 
         self.herbivores = [h for h in self.herbivores if h.alive] + new_kids
@@ -288,9 +427,11 @@ class World:
             if c.energy <= 0:
                 c.alive = False
                 self.deaths['carn_starve'] += 1
+                self._add_carrion(c.x, c.y, 'carn')
             elif c.age > 1800:
                 c.alive = False
                 self.deaths['carn_old'] += 1
+                self._add_carrion(c.x, c.y, 'carn')
             elif (c.energy >= CARN_REPRODUCE
                     and len(self.carnivores) + len(new_kids) < MAX_CARN):
                 c.energy -= CARN_REPRODUCE_COST
@@ -302,7 +443,10 @@ class World:
                     vx=self.rng.uniform(-1, 1),
                     vy=self.rng.uniform(-1, 1),
                     energy=CARN_REPRODUCE_COST * 0.8,
+                    id=self._next_id(),
+                    parent_id=c.id,
                 ))
+                c.children += 1
                 self.births['carn'] += 1
 
         self.carnivores = [c for c in self.carnivores if c.alive] + new_kids
@@ -318,6 +462,9 @@ class World:
                 c.energy = min(CARN_MAX_E, c.energy + CARN_HUNT_GAIN)
                 h.alive = False
                 self.deaths['herb_killed'] += 1
+                # 시체 → 흙, 그리고 공포의 흔적은 산 자들에게 남는다
+                self._add_carrion(h.x, h.y, 'herb')
+                self._add_fear_mark(h.x, h.y)
                 return
 
     # ── 공용 유틸 ───────────────────────────────────────

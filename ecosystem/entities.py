@@ -74,6 +74,9 @@ class Herbivore:
     energy: float = HERB_INIT_E
     age: int = 0
     alive: bool = True
+    id: int = 0
+    parent_id: int = -1
+    children: int = 0           # 살아 있는 동안 누적된 자식 수
 
 
 # ──────────────────────────────────────────────────────────────
@@ -110,3 +113,59 @@ class Carnivore:
     energy: float = CARN_INIT_E
     age: int = 0
     alive: bool = True
+    id: int = 0
+    parent_id: int = -1
+    children: int = 0
+
+
+# ──────────────────────────────────────────────────────────────
+# Carrion — 시체는 흙으로, 흙은 다시 생명으로
+# ──────────────────────────────────────────────────────────────
+
+CARRION_LIFESPAN = 140          # tick
+CARRION_PLANT_PROB = 0.014      # 분해되며 그 자리에 새 식물이 돋아날 확률
+
+
+@dataclass
+class Carrion:
+    x: float
+    y: float
+    species: str = 'herb'       # 'herb' / 'carn' — 색조 구분용
+    age: int = 0
+    lifespan: int = CARRION_LIFESPAN
+    alive: bool = True
+
+
+# ──────────────────────────────────────────────────────────────
+# FearMark — 사냥당한 자리에 남는 공포의 흔적
+# ──────────────────────────────────────────────────────────────
+
+FEAR_LIFESPAN = 240
+FEAR_RADIUS = 60.0
+FEAR_FORCE = 0.55
+
+
+@dataclass
+class FearMark:
+    x: float
+    y: float
+    age: int = 0
+    lifespan: int = FEAR_LIFESPAN
+    radius: float = FEAR_RADIUS
+    alive: bool = True
+
+
+# ──────────────────────────────────────────────────────────────
+# Day/Night — 영원회귀의 사이클
+# ──────────────────────────────────────────────────────────────
+
+DAY_CYCLE_LEN = 900             # tick — 약 30초 @ 30fps
+DAY_GROW_SPAN = 0.6             # 낮/밤 식물 성장 진폭 (light=0 → 0.4×, =1 → 1.6×)
+
+
+# ──────────────────────────────────────────────────────────────
+# Founder & Elder 표시 임계치
+# ──────────────────────────────────────────────────────────────
+
+FOUNDER_MIN_CHILDREN = 3        # 자손 3 이상이어야 시조로 인정
+ELDER_MIN_AGE = 600             # 600 tick 이상 살아야 장로로 인정

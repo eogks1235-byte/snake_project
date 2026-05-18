@@ -7,7 +7,11 @@
       "Bash(python -m neural.main --record --headless --auto-exit-ticks 300)",
       "Bash(python -m neural.main --record --headless --auto-exit-ticks 200)",
       "Bash(python -m neural.battle --headless --ticks 100)",
-      "Bash(python -m neural.compare_video --headless --ticks 3600)"
+      "Bash(python -m neural.compare_video --headless --ticks 3600)",
+      "Bash(python -c \"import matplotlib; print\\(matplotlib.__version__\\)\")",
+      "Bash(python -m genetic.experiments --seeds 2 --ticks 200)",
+      "Bash(python -m genetic.experiments --only b --seeds 2 --ticks 200)",
+      "Bash(python -m genetic.experiments --only acd --seeds 2 --ticks 200)"
     ]
   }
 }
