@@ -191,15 +191,12 @@ def main():
     current_match_id = None
     hold = 0
 
-    # ── Recap 상태 (토너먼트 종료 후 득점왕/어시왕 → Best XI) ──
+    # ── Recap 상태 (토너 종료 후 득점왕/어시왕 → Best XI, 단일 recorder) ──
     recap_started = False
     recap_frame = 0
-    recap_recorder: VideoRecorder | None = None
+    recap_recorder: VideoRecorder | None = None   # 두 phase 다 같은 mp4 로
     recap_done = False
-    # Best XI 단계 — 득점왕/어시왕 끝난 뒤 자동 진입
-    bestxi_started = False
     bestxi_frame = 0
-    bestxi_recorder: VideoRecorder | None = None
     bestxi_done = False
 
     def open_recorder_for(match_id: str):
@@ -339,18 +336,20 @@ def main():
                         current_match_id = None  # 종료 화면 유지
                         current_match = None      # recap 트리거 위해 None 표시
 
-        # ── Recap 모드 (토너 종료 후 자동, 또는 L 키로 수동) ──
-        # 토너 종료 + 매치 없음 + 아직 recap 시작 안 함 → 자동 진입
+        # ── Recap 모드 (토너 종료 후 자동) — phase 1: 득점왕/어시왕, phase 2: Best XI ──
+        # 단일 recorder 로 두 phase 다 한 mp4 (recap.mp4) 에 캡처
         if (tournament.completed and current_match is None
                 and not recap_started and not recap_done):
             recap_started = True
             recap_frame = 0
             if record_each and session_dir is not None:
-                recap_path = session_dir / 'recap_topscorers.mp4'
+                recap_path = session_dir / 'recap.mp4'
                 recap_recorder = VideoRecorder(str(recap_path), fps=RECORD_FPS)
-                print(f'[REC] recording recap -> {recap_path.name}')
+                print(f'[REC] recording recap (topscorers + best XI) -> '
+                      f'{recap_path.name}')
 
         if recap_started and not recap_done:
+            # Phase 1: 득점왕/어시왕 라인차트
             recap_frame += 1
             progress = min(1.0, recap_frame / RECAP_BUILD_FRAMES)
             renderer.draw_stats_recap(tournament, progress)
@@ -358,34 +357,22 @@ def main():
                 recap_recorder.capture(renderer.screen)
             if recap_frame >= RECAP_BUILD_FRAMES + RECAP_HOLD_FRAMES:
                 recap_done = True
+                bestxi_frame = 0
+        elif recap_done and not bestxi_done:
+            # Phase 2: Best XI — 같은 recap_recorder 에 이어서 캡처
+            bestxi_frame += 1
+            xi_progress = min(1.0, bestxi_frame / BESTXI_BUILD_FRAMES)
+            renderer.draw_best_xi_recap(tournament, xi_progress)
+            if recap_recorder is not None:
+                recap_recorder.capture(renderer.screen)
+            if bestxi_frame >= BESTXI_BUILD_FRAMES + BESTXI_HOLD_FRAMES:
+                bestxi_done = True
                 if recap_recorder is not None:
                     print(f'[REC] saved {recap_recorder.output_path.name} '
                           f'({recap_recorder.frame_count}f, '
                           f'{recap_recorder.duration_sec:.1f}s)')
                     recap_recorder.close()
                     recap_recorder = None
-        elif recap_done and not bestxi_done:
-            # Best XI 단계 — recap_done 후 자동 진입
-            if not bestxi_started:
-                bestxi_started = True
-                bestxi_frame = 0
-                if record_each and session_dir is not None:
-                    bestxi_path = session_dir / 'recap_bestxi.mp4'
-                    bestxi_recorder = VideoRecorder(str(bestxi_path), fps=RECORD_FPS)
-                    print(f'[REC] recording best XI -> {bestxi_path.name}')
-            bestxi_frame += 1
-            xi_progress = min(1.0, bestxi_frame / BESTXI_BUILD_FRAMES)
-            renderer.draw_best_xi_recap(tournament, xi_progress)
-            if bestxi_recorder is not None:
-                bestxi_recorder.capture(renderer.screen)
-            if bestxi_frame >= BESTXI_BUILD_FRAMES + BESTXI_HOLD_FRAMES:
-                bestxi_done = True
-                if bestxi_recorder is not None:
-                    print(f'[REC] saved {bestxi_recorder.output_path.name} '
-                          f'({bestxi_recorder.frame_count}f, '
-                          f'{bestxi_recorder.duration_sec:.1f}s)')
-                    bestxi_recorder.close()
-                    bestxi_recorder = None
         else:
             renderer.draw(tournament, current_match, current_match_id, fast_forward)
             if recorder is not None:
