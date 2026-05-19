@@ -18,7 +18,7 @@ CLI:
                                                        # 실제 결과 주입
   python soccer/main.py --mc 5000                      # 몬테카를로 5000회
   python soccer/main.py --mc --real ... --watch r16    # 종합 사용
-  python soccer/main.py --mc 5000 --select thriller --record
+  python soccer/main.py --mc 5000 --select realistic --seed 2026  --record
 """
 import sys
 import json
@@ -31,7 +31,7 @@ if __package__ in (None, ''):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
     from soccer.tournament import Tournament
     from soccer.match_engine import Match, play_full_fast
-    from soccer.render import Renderer
+    from soccer.render import Renderer, ShortsRenderer
     from soccer.recorder import VideoRecorder
     from soccer.monte_carlo import (
         run_montecarlo, save_selected_tournament, save_summary, match_seed_offset,
@@ -39,7 +39,7 @@ if __package__ in (None, ''):
 else:
     from .tournament import Tournament
     from .match_engine import Match, play_full_fast
-    from .render import Renderer
+    from .render import Renderer, ShortsRenderer
     from .recorder import VideoRecorder
     from .monte_carlo import (
         run_montecarlo, save_selected_tournament, save_summary, match_seed_offset,
@@ -55,6 +55,8 @@ HOLD_AFTER_MATCH = 60      # 한 경기 끝난 뒤 결과 보여주는 프레임
 HOLD_AFTER_FINAL = 240     # 결승 끝난 뒤 우승 화면 유지
 RECAP_BUILD_FRAMES = 270   # 라인차트 build-up 프레임 (~9초)
 RECAP_HOLD_FRAMES = 90     # 완성된 차트 정지 프레임 (~3초)
+BESTXI_BUILD_FRAMES = 240  # Best XI 11명 순차 등장 (~8초)
+BESTXI_HOLD_FRAMES = 120   # 완성된 Best XI 정지 (~4초)
 
 
 def should_visualize(match_id: str, watch: str) -> bool:
@@ -134,6 +136,8 @@ def main():
                         help='시각화 필터: groupA~groupL / groups / r32 / r16 / qf / sf / bronze / final / knockout')
     parser.add_argument('--real', type=str, default=None,
                         help='실제 결과 JSON 경로 (예: soccer/real_results.json)')
+    parser.add_argument('--shorts', action='store_true',
+                        help='YouTube Shorts 9:16 세로 모드 (1080×1920)')
     args = parser.parse_args()
 
     seed = args.seed if args.seed is not None else random.randint(0, 1_000_000)
@@ -171,7 +175,7 @@ def main():
     tournament = Tournament(seed, real_results=real_results)
     announce_tournament(tournament)
 
-    renderer = Renderer()
+    renderer = ShortsRenderer() if args.shorts else Renderer()
 
     # ── 녹화 세션 ────────────────────────────────────
     record_each = args.record  # V 키로 토글
@@ -187,11 +191,16 @@ def main():
     current_match_id = None
     hold = 0
 
-    # ── Recap 상태 (토너먼트 종료 후 득점왕/어시왕 라인차트 애니메이션) ──
+    # ── Recap 상태 (토너먼트 종료 후 득점왕/어시왕 → Best XI) ──
     recap_started = False
     recap_frame = 0
     recap_recorder: VideoRecorder | None = None
     recap_done = False
+    # Best XI 단계 — 득점왕/어시왕 끝난 뒤 자동 진입
+    bestxi_started = False
+    bestxi_frame = 0
+    bestxi_recorder: VideoRecorder | None = None
+    bestxi_done = False
 
     def open_recorder_for(match_id: str):
         """현재 매치용 새 recorder 시작."""
@@ -355,6 +364,28 @@ def main():
                           f'{recap_recorder.duration_sec:.1f}s)')
                     recap_recorder.close()
                     recap_recorder = None
+        elif recap_done and not bestxi_done:
+            # Best XI 단계 — recap_done 후 자동 진입
+            if not bestxi_started:
+                bestxi_started = True
+                bestxi_frame = 0
+                if record_each and session_dir is not None:
+                    bestxi_path = session_dir / 'recap_bestxi.mp4'
+                    bestxi_recorder = VideoRecorder(str(bestxi_path), fps=RECORD_FPS)
+                    print(f'[REC] recording best XI -> {bestxi_path.name}')
+            bestxi_frame += 1
+            xi_progress = min(1.0, bestxi_frame / BESTXI_BUILD_FRAMES)
+            renderer.draw_best_xi_recap(tournament, xi_progress)
+            if bestxi_recorder is not None:
+                bestxi_recorder.capture(renderer.screen)
+            if bestxi_frame >= BESTXI_BUILD_FRAMES + BESTXI_HOLD_FRAMES:
+                bestxi_done = True
+                if bestxi_recorder is not None:
+                    print(f'[REC] saved {bestxi_recorder.output_path.name} '
+                          f'({bestxi_recorder.frame_count}f, '
+                          f'{bestxi_recorder.duration_sec:.1f}s)')
+                    bestxi_recorder.close()
+                    bestxi_recorder = None
         else:
             renderer.draw(tournament, current_match, current_match_id, fast_forward)
             if recorder is not None:
@@ -362,7 +393,7 @@ def main():
 
         # 결승 끝 + recap 끝 + 시간 지나면 자동 종료 (--record 시)
         if tournament.completed and current_match is None and record_each:
-            if recap_done:
+            if bestxi_done:
                 hold -= 1
                 if hold <= -HOLD_AFTER_FINAL:
                     running = False

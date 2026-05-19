@@ -169,6 +169,10 @@ class MatchResult:
     player_assists: dict = field(default_factory=dict) # (team_idx, name) → assists
     own_goals: int = 0                                  # 매치 내 자책골 개수
     appearances: list = field(default_factory=list)    # [(team_idx, name, role, rating, is_star)]
+    # 경기 평점 (Phase 1) — base 6.0, 골/어시/실점 등으로 누적, 4.0~10.0 clamp
+    player_ratings: dict = field(default_factory=dict) # (team_idx, name) → float
+    # 매치 MVP — (team_idx, name, rating). 없으면 None
+    mvp: Optional[tuple] = None
 
     @property
     def winner(self) -> Optional[Team]:
@@ -201,7 +205,7 @@ class MatchResult:
 @dataclass
 class Player:
     team_idx: int      # 0 = home, 1 = away
-    role: str          # GK / DEF / MID / FWD
+    role: str          # GK / DEF / MID / FWD — 현재 슬롯 (전술 변경 시 변동)
     x: float
     y: float
     home_x: float      # 포메이션상 홈 위치
@@ -216,7 +220,11 @@ class Player:
     is_starter: bool = True        # 선발 (vs 후보)
     on_pitch: bool = True          # 현재 출전 중
     sub_in_minute: int = 0         # 후보의 경우 들어온 분 (선발은 0)
+    sub_out_minute: int = 0        # 교체되어 나간 분 (안 나갔으면 0)
     subbed_off: bool = False       # 한 번 교체 나감 → 다시 못 들어옴 (FIFA 룰)
+    # 원본 포지션 — 스쿼드 데이터의 role. 전술 변경에도 불변.
+    # appearances/평점/Best XI 계산은 이걸 사용해야 함 (role 은 슬롯이라 변동).
+    original_role: str = ''
 
     @property
     def can_carry(self) -> bool:
@@ -333,6 +341,12 @@ class Match:
         self.player_goals: dict = {}         # (team_idx, name) → 골 수
         self.player_assists: dict = {}       # (team_idx, name) → 어시스트 수
         self.own_goals = 0                   # 매치 내 자책골
+        # ── 경기 평점 (Phase 1) ────────────────────────
+        # (team_idx, name) → float. 6.0 base, 이벤트로 누적, finalize 시 clamp.
+        self.player_ratings: dict = {}
+        for p in self.players:
+            if p.name:
+                self.player_ratings[(p.team_idx, p.name)] = 6.0
         self.subs_made = [0, 0]              # 팀별 교체 수 (0~5)
         self._last_min_subbed = -1           # 같은 분에 중복 트리거 방지
 
@@ -674,6 +688,7 @@ class Match:
                     is_star=pdata.is_star if pdata else False,
                     pk_taker=pdata.pk_taker if pdata else False,
                     is_starter=True, on_pitch=True,
+                    original_role=pdata.role if pdata else role,
                 ))
             # 후보 5명 — 벤치 (off-pitch). 남은 풀에서 가져옴
             pools = h_pools if team_idx == 0 else a_pools
@@ -692,6 +707,7 @@ class Match:
                         name=pdata.name, rating=pdata.rating,
                         is_star=pdata.is_star, pk_taker=pdata.pk_taker,
                         is_starter=False, on_pitch=False,
+                        original_role=pdata.role,
                     ))
 
     # ── 메인 루프 ───────────────────────────────────────────
@@ -1079,7 +1095,8 @@ class Match:
     def _find_opp_keeper(self, team_idx: int) -> Optional[Player]:
         opp = 1 - team_idx
         for p in self.players:
-            if p.team_idx == opp and p.role == 'GK' and p.on_pitch:
+            if p.team_idx == opp and p.on_pitch and (
+                    p.original_role or p.role) == 'GK':
                 return p
         return None
 
@@ -1194,18 +1211,28 @@ class Match:
 
         will_be_goal = self.rng.random() < goal_p
         # 막혔을 때 유효슛 비율 (visual_rng — 게임 결정 RNG 보존)
+        was_on_target = False
         if not will_be_goal:
             on_target_p = ON_TARGET_RATE_BASE + (atk.attack - 70) * 0.005
             if self.visual_rng.random() < on_target_p:
                 self.team_on_target[team] += 1
+                was_on_target = True
         else:
             self.team_on_target[team] += 1
+            was_on_target = True
 
         # 막힌 슛 중 일부는 코너로 (blockers > 0 일 때만)
         blocked_for_corner = False
         if not will_be_goal and self._count_blockers_in_lane(carrier) > 0:
             if self.rng.random() < CORNER_ON_BLOCK_PROB:
                 blocked_for_corner = True
+
+        # 1v1 판정 (Phase 2 — difficult save 분류용)
+        is_1v1 = False
+        if gk is not None and self._count_blockers_in_lane(carrier) == 0:
+            gk_dist = math.hypot(gk.x - carrier.x, gk.y - carrier.y)
+            if gk_dist < ONE_V_ONE_GK_DIST:
+                is_1v1 = True
 
         # 비행 상태 셋업
         cy = self.PITCH_H / 2
@@ -1227,6 +1254,10 @@ class Match:
             'assist_name': assist_name,
             'is_setpiece': False,
             'goal_type': 'open_play',
+            # Phase 2 — 평점 델타용
+            'shooter_name': carrier.name,
+            'was_on_target': was_on_target,
+            'is_1v1': is_1v1,
         }
         self.phase = 'shot_in_flight'
         self.phase_start_tick = self.tick_count
@@ -1270,6 +1301,19 @@ class Match:
         s = self.shot_state
         team = s['team_idx']
         team_obj = self.home if team == 0 else self.away
+
+        # ── Phase 2: 슛/세이브 평점 델타 ────────────────────
+        shooter = s.get('shooter_name', '')
+        if shooter:
+            # 슛 시도 자체 — 빗나간 슛도 +0.04, 유효슛은 +0.10 (replace)
+            self._add_rating(team, shooter,
+                              0.10 if s.get('was_on_target') else 0.04)
+        # 세이브 — 유효슛인데 골 아닐 때 GK 크레딧
+        if not s['will_be_goal'] and s.get('was_on_target'):
+            gk = self._find_opp_keeper(team)
+            if gk is not None and gk.name:
+                save_delta = 0.35 if s.get('is_1v1') else 0.20
+                self._add_rating(gk.team_idx, gk.name, save_delta)
 
         if s['will_be_goal']:
             self._score(team, goal_type=s.get('goal_type', 'open_play'),
@@ -1324,15 +1368,33 @@ class Match:
         team = carrier.team_idx
         best = 1e9
         for p in self.players:
-            if not p.on_pitch or p.team_idx == team or p.role == 'GK':
+            if not p.on_pitch or p.team_idx == team or (
+                    p.original_role or p.role) == 'GK':
                 continue
             d = math.hypot(p.x - carrier.x, p.y - carrier.y)
             if d < best:
                 best = d
         return best
 
+    def _nearest_opp_player(self, carrier: Player) -> Optional[Player]:
+        """가장 가까운 상대 필드 플레이어 — fouler/tackler 식별용."""
+        team = carrier.team_idx
+        best_p = None
+        best_d = 1e9
+        for p in self.players:
+            if not p.on_pitch or p.team_idx == team or (
+                    p.original_role or p.role) == 'GK':
+                continue
+            d = math.hypot(p.x - carrier.x, p.y - carrier.y)
+            if d < best_d:
+                best_d = d
+                best_p = p
+        return best_p
+
     def _check_foul_opportunity(self, carrier: Player):
-        """수비수가 압박 반경 안이고 carrier가 위협 위치면 파울 가능성."""
+        """수비수가 압박 반경 안이고 carrier가 위협 위치면 파울 가능성.
+        Phase 2: 파울 시 fouler -0.10, carrier +0.04(foul won).
+                 무파울이지만 가까이 압박 → 작은 확률로 tackle won +0.12."""
         if self.phase != 'normal':
             return
         team = carrier.team_idx
@@ -1349,12 +1411,25 @@ class Match:
         # 박스 안은 파울 확률 3배 (PK 현실적 비율 위해)
         box_mult = 3.0 if in_box else 1.0
         p_foul = FOUL_PROB_PER_TICK_BASE * (0.5 + proximity) * box_mult
-        if self.rng.random() > p_foul:
+        if self.rng.random() <= p_foul:
+            # 파울 발생 — fouler/carrier 평점
+            fouler = self._nearest_opp_player(carrier)
+            if fouler is not None and fouler.name:
+                self._add_rating(fouler.team_idx, fouler.name, -0.10)
+            if carrier.name:
+                self._add_rating(carrier.team_idx, carrier.name, 0.04)
+            if in_box:
+                self._start_setpiece(team, 'penalty')
+            else:
+                self._start_setpiece(team, 'free_kick')
             return
-        if in_box:
-            self._start_setpiece(team, 'penalty')
-        else:
-            self._start_setpiece(team, 'free_kick')
+        # 파울 미발생이지만 압박 거리 매우 가까움 — 깔끔한 태클로 간주
+        # (visual_rng — 게임 결정에 영향 X)
+        if dist < PRESSURE_RADIUS * 0.55:
+            if self.visual_rng.random() < 0.015:
+                tackler = self._nearest_opp_player(carrier)
+                if tackler is not None and tackler.name:
+                    self._add_rating(tackler.team_idx, tackler.name, 0.12)
 
     def _start_setpiece(self, team_idx: int, kind: str):
         """세트피스 진입 — 셋업 + 슛 비행을 합친 phase."""
@@ -1397,14 +1472,29 @@ class Match:
         will_be_goal = self.rng.random() < goal_p
         self.team_shots[team_idx] += 1
         self.team_xG[team_idx] += goal_p
+        was_on_target = will_be_goal
         if will_be_goal:
             self.team_on_target[team_idx] += 1
         else:
             on_target_p = ON_TARGET_RATE_BASE + (atk.attack - 70) * 0.005
             if self.visual_rng.random() < on_target_p:
                 self.team_on_target[team_idx] += 1
+                was_on_target = True
 
-        scorer_name = self._pick_scorer(team_idx, kind) if will_be_goal else ''
+        # 정규시간 PK — B 픽스: 지명 pk_taker 우선 / I 픽스: was_on_target=True
+        designated_pk = None
+        if kind == 'penalty':
+            designated_pk = next((p for p in self.players
+                                   if p.team_idx == team_idx and p.on_pitch
+                                   and p.pk_taker and p.name), None)
+            was_on_target = True   # PK 는 항상 골대 향함
+
+        if kind == 'penalty' and designated_pk is not None:
+            shooter_name = designated_pk.name
+            scorer_name = designated_pk.name if will_be_goal else ''
+        else:
+            scorer_name = self._pick_scorer(team_idx, kind) if will_be_goal else ''
+            shooter_name = scorer_name or self._pick_scorer(team_idx, kind)
         assist_name = self._pick_assister(team_idx, scorer_name) if will_be_goal else ''
 
         self.setpiece_state = {
@@ -1416,6 +1506,10 @@ class Match:
             'goal_type': kind,
             'scorer_name': scorer_name,
             'assist_name': assist_name,
+            # Phase 2
+            'shooter_name': shooter_name,
+            'was_on_target': was_on_target,
+            'is_1v1': (kind == 'penalty'),  # PK 는 1v1 취급
         }
         self.phase = 'setpiece_shot'
         self.phase_start_tick = self.tick_count
@@ -1527,6 +1621,18 @@ class Match:
         sp = self.setpiece_state
         team = sp['team_idx']
         team_obj = self.home if team == 0 else self.away
+
+        # ── Phase 2: 세트피스 슛/세이브 평점 델타 ────────────
+        shooter = sp.get('shooter_name', '')
+        if shooter:
+            self._add_rating(team, shooter,
+                              0.10 if sp.get('was_on_target') else 0.04)
+        if not sp['will_be_goal'] and sp.get('was_on_target'):
+            gk = self._find_opp_keeper(team)
+            if gk is not None and gk.name:
+                save_delta = 0.35 if sp.get('is_1v1') else 0.20
+                self._add_rating(gk.team_idx, gk.name, save_delta)
+
         if sp['will_be_goal']:
             self._score(team, goal_type=sp['goal_type'],
                          scorer_name=sp.get('scorer_name', ''),
@@ -1761,6 +1867,7 @@ class Match:
         in_p.sub_in_minute = self.minute
         out_p.on_pitch = False
         out_p.subbed_off = True       # 영구 마킹 — 다시 못 들어옴
+        out_p.sub_out_minute = self.minute
         out_p.x = -100
         out_p.y = -100
 
@@ -1836,6 +1943,21 @@ class Match:
             mult *= HOT_LATE_PENALTY
         return mult
 
+    # ── 경기 평점 헬퍼 ─────────────────────────────────
+    def _add_rating(self, team_idx: int, name: str, delta: float):
+        """선수 평점에 델타 적용. clamp는 _finalize_ratings에서 일괄."""
+        if not name:
+            return
+        key = (team_idx, name)
+        self.player_ratings[key] = self.player_ratings.get(key, 6.0) + delta
+
+    def _role_of(self, team_idx: int, name: str) -> str:
+        """선수의 원본 포지션 (전술 변경 무관). 평점 계산용."""
+        for p in self.players:
+            if p.team_idx == team_idx and p.name == name:
+                return p.original_role or p.role
+        return ''
+
     def _score(self, team_idx: int, goal_type: str = 'open_play',
                 scorer_name: str = '', assist_name: str = ''):
         team = self.home if team_idx == 0 else self.away
@@ -1859,6 +1981,9 @@ class Match:
             # 자책골은 player_goals에 누적 안 함
             recorded_scorer = ''
             recorded_assist = ''
+            # 평점: 자책골 선수 -1.5 (자책골 선수는 수비팀(1-team_idx) 소속)
+            if scorer_name:
+                self._add_rating(1 - team_idx, scorer_name, -1.5)
         else:
             # 호출자가 scorer/assist를 안 줬으면 fallback (직접 호출 케이스)
             if not scorer_name:
@@ -1879,6 +2004,22 @@ class Match:
             self.events.append(MatchEvent(self.minute, 'goal', team_idx, text))
             recorded_scorer = scorer_name
             recorded_assist = assist_name
+            # 평점: 득점 +1.4 (GK 득점은 +2.5), 어시 +0.8
+            if scorer_name:
+                scorer_role = self._role_of(team_idx, scorer_name)
+                goal_bonus = 2.5 if scorer_role == 'GK' else 1.4
+                self._add_rating(team_idx, scorer_name, goal_bonus)
+            if assist_name:
+                self._add_rating(team_idx, assist_name, 0.8)
+
+        # 평점: 실점한 팀(team이 득점하면 수비팀 = 1-team_idx)의 현재 GK -0.2
+        # original_role 사용 — 전술 변경으로 role=GK 가 된 필드 플레이어 잘못 잡지 않게
+        conceding = 1 - team_idx
+        gk_on = next((p for p in self.players
+                       if p.team_idx == conceding and p.on_pitch
+                       and (p.original_role or p.role) == 'GK' and p.name), None)
+        if gk_on is not None:
+            self._add_rating(conceding, gk_on.name, -0.2)
 
         # goals_log 에 기록 (setpiece_counts / kickoff 페이즈 참조용)
         self.goals_log.append({
@@ -2011,6 +2152,7 @@ class Match:
             self.events.append(MatchEvent(self.minute, 'half', -1,
                                             'EXTRA TIME'))
         else:
+            self._finalize_ratings()
             self.finished = True
             self.events.append(MatchEvent(self.minute, 'fulltime', -1,
                                             'FULL TIME'))
@@ -2025,11 +2167,67 @@ class Match:
             self.events.append(MatchEvent(self.minute, 'half', -1,
                                             'TO PENALTIES'))
         else:
+            self._finalize_ratings()
             self.finished = True
             self.in_extra_time = False
             self.result.decided_in_et = True
             self.events.append(MatchEvent(self.minute, 'fulltime', -1,
                                             'ET FULL TIME'))
+
+    # ── 평점 finalize ───────────────────────────────────────
+    def _finalize_ratings(self):
+        """매치 종료 시 평점 보정:
+        - GK clean sheet: +1.0 (팀 실점 0일 때)
+        - 후반에 들어온 교체선수 보너스: 0.3 * min(30, 잔여분) / 30
+        - 출전시간 ≤ 30분: rating = 6.0 + (rating - 6.0) * 0.8
+        - clamp [4.0, 10.0]
+        한 번만 호출 (정규/ET/PK 종료 시점에서 1번)."""
+        if getattr(self, '_ratings_finalized', False):
+            return
+        self._ratings_finalized = True
+        end_min = self.minute
+        for p in self.players:
+            if not p.name:
+                continue
+            key = (p.team_idx, p.name)
+            if key not in self.player_ratings:
+                continue
+
+            played = p.is_starter or p.sub_in_minute > 0
+            if not played:
+                # 벤치에서 한 번도 안 나옴 → 평점 무효 (제거)
+                self.player_ratings.pop(key, None)
+                continue
+
+            # 출전 시간 계산
+            start_min = p.sub_in_minute if not p.is_starter else 0
+            stop_min = p.sub_out_minute if p.subbed_off else end_min
+            minutes_played = max(0, stop_min - start_min)
+
+            r = self.player_ratings[key]
+
+            # 후반(45+) 들어온 sub 보너스 — 잔여분 = end - sub_in
+            if not p.is_starter and p.sub_in_minute >= 45:
+                remaining = max(0, end_min - p.sub_in_minute)
+                r += 0.3 * min(30, remaining) / 30
+
+            # GK clean sheet — 상대 득점 0일 때 (original_role 기준)
+            if (p.original_role or p.role) == 'GK':
+                conceded = (self.result.away_goals if p.team_idx == 0
+                            else self.result.home_goals)
+                if conceded == 0:
+                    r += 1.0
+
+            # 30분 이하 출전 캡 — base 6.0 위/아래 변동을 80%로 축소
+            if minutes_played <= 30:
+                r = 6.0 + (r - 6.0) * 0.8
+
+            # clamp 4.0 ~ 10.0
+            r = max(4.0, min(10.0, r))
+            self.player_ratings[key] = r
+
+        # 매치 결과에도 즉시 반영 (interactive/headless 양쪽 모두 안전)
+        _populate_result_player_stats(self)
 
     def _select_pk_kickers(self, team_idx: int) -> list:
         """PK 5인 키커 명단 — pk_taker 우선 → FWD/MID/DEF rating 순."""
@@ -2075,23 +2273,39 @@ class Match:
                 self.events.append(MatchEvent(
                     90, 'pk', shooter_idx,
                     f'PK GOAL ({taker_team.code}) {kicker_name}'))
+                # 평점: PK 성공 키커 +0.20
+                if kicker and kicker.name:
+                    self._add_rating(kicker.team_idx, kicker.name, 0.20)
             else:
                 self.events.append(MatchEvent(
                     90, 'pk', shooter_idx,
                     f'PK MISS ({taker_team.code}) {kicker_name}'))
+                # 평점: PK 실축 -0.30, GK 세이브 +0.80
+                if kicker and kicker.name:
+                    self._add_rating(kicker.team_idx, kicker.name, -0.30)
+                gk = next((p for p in self.players
+                            if p.on_pitch
+                            and p.team_idx == (1 - shooter_idx)
+                            and (p.original_role or p.role) == 'GK'
+                            and p.name), None)
+                if gk is not None:
+                    self._add_rating(gk.team_idx, gk.name, 0.80)
 
         if self.pk_round >= 5:
             if self.result.home_pk != self.result.away_pk:
+                self._finalize_ratings()
                 self.result.went_to_pk = True
                 self.finished = True
                 self.events.append(MatchEvent(90, 'fulltime', -1, 'PK DECIDED'))
 
 
 def _populate_result_player_stats(m: 'Match'):
-    """매치 결과에 player_goals/assists/own_goals + appearances 복사."""
+    """매치 결과에 player_goals/assists/own_goals + appearances + ratings + mvp 복사.
+    appearances 의 role 은 original_role (전술 변경 영향 없는 원본 포지션)."""
     m.result.player_goals = dict(m.player_goals)
     m.result.player_assists = dict(m.player_assists)
     m.result.own_goals = m.own_goals
+    m.result.player_ratings = dict(m.player_ratings)
     seen = set()
     appearances = []
     for p in m.players:
@@ -2102,8 +2316,22 @@ def _populate_result_player_stats(m: 'Match'):
         if not played:
             continue
         seen.add(p.name)
-        appearances.append((p.team_idx, p.name, p.role, p.rating, p.is_star))
+        # original_role 우선, 비어있으면 p.role 폴백
+        canonical_role = p.original_role or p.role
+        appearances.append((p.team_idx, p.name, canonical_role, p.rating, p.is_star))
     m.result.appearances = appearances
+
+    # 매치 MVP — 평점 최고. 동점 시 골→어시→base rating
+    if m.player_ratings:
+        def _mvp_key(item):
+            (team_idx, name), r = item
+            goals = m.player_goals.get((team_idx, name), 0)
+            assists = m.player_assists.get((team_idx, name), 0)
+            base = next((p.rating for p in m.players
+                          if p.team_idx == team_idx and p.name == name), 70)
+            return (r, goals, assists, base)
+        (team_idx, name), best_r = max(m.player_ratings.items(), key=_mvp_key)
+        m.result.mvp = (team_idx, name, best_r)
 
 
 def play_full(home: Team, away: Team, knockout: bool,

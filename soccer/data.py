@@ -84,14 +84,16 @@ GROUPS: dict = _load_groups()
 @dataclass(frozen=True)
 class PlayerData:
     name: str
-    role: str           # GK / DEF / MID / FWD
+    role: str           # GK / DEF / MID / FWD (4분류 — 엔진 호환)
     rating: int
     is_star: bool = False
     pk_taker: bool = False
+    position: str = ''  # 세부: GK/CB/LB/RB/DM/CM/AM/LW/RW/ST. positions.py 에서 자동 산출
 
 
 def _load_squads() -> dict:
-    """code → list[PlayerData] (16명/팀)"""
+    """code → list[PlayerData] (16명/팀). positions.py 에서 세부 포지션 산출."""
+    from .positions import infer_position_for_squad
     path = Path(__file__).parent / 'squads.json'
     if not path.exists():
         return {}
@@ -99,7 +101,8 @@ def _load_squads() -> dict:
         raw = json.load(f)
     out: dict = {}
     for code, plist in raw.get('squads', {}).items():
-        out[code] = [
+        # 1차: position 비워둔 채로 임시 PlayerData 생성 (rating/role 필요)
+        tmp_players = [
             PlayerData(
                 name=p['name'],
                 role=p['role'],
@@ -109,6 +112,12 @@ def _load_squads() -> dict:
             )
             for p in plist
         ]
+        # 2차: 팀별 휴리스틱으로 세부 포지션 매핑
+        pos_map = infer_position_for_squad(tmp_players)
+        # 3차: position 채워서 다시 만듦 (frozen dataclass 라 replace 사용)
+        from dataclasses import replace
+        out[code] = [replace(p, position=pos_map.get(p.name, p.role))
+                     for p in tmp_players]
     return out
 
 

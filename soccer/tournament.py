@@ -7,7 +7,7 @@
   4) R32 결과 등록 시 → R16 큐에 추가, 등등
 """
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 
 from .data import (
@@ -107,35 +107,53 @@ KNOCKOUT_VENUES = {
 
 # 매치 → 라운드 깊이 (그 매치에 등장 = 그 라운드까지 도달)
 def _round_for_match(mid: str) -> int:
+    """매치별 도달 라운드 기본값 (출전만으로 부여).
+    추가 보정은 _update_player_stats 에서 처리:
+      M103 winner → 5 (3위)
+      M104 loser  → 6 (준우승, default rnd=6)
+      M104 winner → 7 (우승)
+    """
     if mid.startswith('G'):
         return 0
     n = int(mid[1:])
     if n <= 88: return 1   # R32 진출
     if n <= 96: return 2   # R16 진출
     if n <= 100: return 3  # QF 진출
-    if n <= 103: return 4  # SF/3·4위전 진출
-    return 5               # Final 진출
+    if n <= 102: return 4  # SF 진출 (loser stays 4)
+    if n == 103: return 4  # 3위전 — loser stays 4, winner 는 _update 에서 5
+    return 6               # Final 진출 — loser=6, winner=7 (별도 보정)
 
 
 @dataclass
 class PlayerStats:
     name: str
     country: str
-    role: str
+    role: str               # GK / DEF / MID / FWD (4분류)
     rating: int
     is_star: bool
     goals: int = 0
     assists: int = 0
     matches: int = 0
-    team_round: int = 0     # 0=조별 탈락, 1=R32, 2=R16, 3=QF, 4=SF, 5=결승, 6=우승
+    # team_round: 0=조별, 1=R32, 2=R16, 3=QF, 4=SF(loser/3위전 loser), 5=3위, 6=준우승, 7=우승
+    team_round: int = 0
+    # 경기 평점 누적 — 매치별 평점 리스트 (avg_rating 계산용)
+    ratings_log: list = field(default_factory=list)
+    # 세부 포지션 (GK/CB/LB/RB/DM/CM/AM/LW/RW/ST). positions.py 산출
+    position: str = ''
+
+    @property
+    def avg_rating(self) -> float:
+        if not self.ratings_log:
+            return 6.0
+        return sum(self.ratings_log) / len(self.ratings_log)
 
     def mvp_score(self) -> float:
         s = (self.goals * 1.5
              + self.assists * 0.7
-             + self.team_round * 0.5
+             + self.team_round * 0.4         # scale 0~7
              + self.rating * 0.02
              + (0.4 if self.is_star else 0))
-        if self.team_round == 6:
+        if self.team_round == 7:              # 우승
             s += 1.5
         s *= (0.7 + min(1.0, self.matches / 7.0) * 0.3)
         return s
@@ -247,16 +265,25 @@ class Tournament:
             country = result.home.code if team_idx == 0 else result.away.code
             stats = self.player_stats.get(name)
             if stats is None:
+                # 세부 포지션 — team.squad 에서 같은 이름의 PlayerData 찾기
+                team = result.home if team_idx == 0 else result.away
+                pdata = next((p for p in team.squad if p.name == name), None)
+                position = pdata.position if pdata and pdata.position else role
                 stats = PlayerStats(
                     name=name, country=country, role=role,
                     rating=rating, is_star=is_star,
+                    position=position,
                 )
                 self.player_stats[name] = stats
             stats.matches += 1
             if rnd > stats.team_round:
                 stats.team_round = rnd
+            # 3위전 (M103) 승자 — SF loser 보다 한 단계 위
+            if match_id == 'M103' and winner_code and country == winner_code:
+                stats.team_round = max(stats.team_round, 5)
+            # 결승 (M104) 승자 — 우승
             if is_final and country == winner_code:
-                stats.team_round = 6
+                stats.team_round = 7
 
         for (team_idx, name), goals in result.player_goals.items():
             if name in self.player_stats:
@@ -265,6 +292,12 @@ class Tournament:
         for (team_idx, name), assists in result.player_assists.items():
             if name in self.player_stats:
                 self.player_stats[name].assists += assists
+
+        # 평점 누적 — 매치별 평점을 ratings_log 에 append
+        for (team_idx, name), match_r in getattr(
+                result, 'player_ratings', {}).items():
+            if name in self.player_stats:
+                self.player_stats[name].ratings_log.append(match_r)
 
         # 매치별 스냅샷 — 라인차트 애니메이션용
         snap = {
@@ -279,32 +312,65 @@ class Tournament:
         self.stat_history.append((match_id, snap))
 
     def compute_awards(self) -> dict:
-        """대회 종료 시 어워드 계산. completed=False여도 현재 시점 통계로 반환."""
+        """대회 종료 시 어워드 계산. completed=False여도 현재 시점 통계로 반환.
+        Best XI는 평균 평점 기반 (최소 3경기 출전 필터)."""
         if not self.player_stats:
             return None
         all_stats = list(self.player_stats.values())
 
-        # Golden Boot — 골 → 어시스트 → 적은 출전 시간 → rating
+        # Golden Boot — 골 → 어시스트 → rating (display 와 동일 tiebreaker)
         golden_boot = max(all_stats,
-                           key=lambda p: (p.goals, p.assists, -p.matches, p.rating))
+                           key=lambda p: (p.goals, p.assists, p.rating))
 
         # MVP — composite score
         mvp = max(all_stats, key=lambda p: p.mvp_score())
 
-        # 포지션별 최고
+        # 포지션별 최고 — avg_rating 기준
         best_per_role = {}
         for role in ('GK', 'DEF', 'MID', 'FWD'):
-            cands = [p for p in all_stats if p.role == role]
+            cands = [p for p in all_stats
+                     if p.role == role and p.matches >= 3]
             if cands:
-                best_per_role[role] = max(cands, key=lambda p: p.mvp_score())
+                best_per_role[role] = max(cands, key=lambda p: p.avg_rating)
 
-        # Best XI (4-3-3): 1 GK + 4 DEF + 3 MID + 3 FWD
-        target = {'GK': 1, 'DEF': 4, 'MID': 3, 'FWD': 3}
+        # Best XI (4-3-3) — 세부 포지션 슬롯별로 avg_rating 최고 1명씩.
+        # 슬롯: 1 GK + 2 CB + 1 LB + 1 RB + 1 DM + 1 CM + 1 AM + 1 ST + 1 LW + 1 RW
+        # 토너 후반 도달 가산점 (team_round 0~7 스케일)
+        def xi_score(p):
+            return p.avg_rating + 0.15 * (p.team_round / 7.0)
+
+        # 각 슬롯의 후보 풀 (position 매칭) + 폴백 풀 (role 매칭)
+        # 슬롯 정의: (target_position, n, fallback_role)
+        slots = [
+            ('GK', 1, 'GK'),
+            ('CB', 2, 'DEF'),
+            ('LB', 1, 'DEF'),
+            ('RB', 1, 'DEF'),
+            ('DM', 1, 'MID'),
+            ('CM', 1, 'MID'),
+            ('AM', 1, 'MID'),
+            ('ST', 1, 'FWD'),
+            ('LW', 1, 'FWD'),
+            ('RW', 1, 'FWD'),
+        ]
+        eligible = [p for p in all_stats if p.matches >= 3]
+        used = set()
         best_xi: list = []
-        for role, n in target.items():
-            cands = sorted([p for p in all_stats if p.role == role],
-                            key=lambda p: -p.mvp_score())
-            best_xi.extend(cands[:n])
+        for target_pos, n, fallback_role in slots:
+            # 1차: position 정확히 일치
+            cands = [p for p in eligible
+                     if p.position == target_pos and p.name not in used]
+            cands.sort(key=lambda p: -xi_score(p))
+            picks = cands[:n]
+            # 2차: 부족하면 fallback (role 일치, 다른 슬롯 가능)
+            if len(picks) < n:
+                fb = [p for p in eligible
+                      if p.role == fallback_role and p.name not in used]
+                fb.sort(key=lambda p: -xi_score(p))
+                picks.extend(fb[:n - len(picks)])
+            for p in picks:
+                used.add(p.name)
+                best_xi.append(p)
 
         return {
             'golden_boot': golden_boot,
@@ -375,8 +441,8 @@ class Tournament:
             self._record_venue_visit(result.away.code, venue)
         # 선수별 통계 누적
         self._update_player_stats(match_id, result)
-        # ET 결정으로 이긴 팀: 다음 매치 stamina 90으로 시작
-        if result.decided_in_et and result.winner is not None:
+        # 120분 풀로 뛴 팀 (ET 결정 / PK 결정 모두): 다음 매치 stamina 90
+        if (result.decided_in_et or result.went_to_pk) and result.winner is not None:
             from .match_engine import ET_WINNER_STAMINA
             self.team_stamina_carry[result.winner.code] = ET_WINNER_STAMINA
         # 정상 종료 후엔 carry 사용 후 reset
@@ -444,9 +510,143 @@ class Tournament:
                 minute=90, kind='real', team_idx=-1,
                 text=f"REAL {home.code} {res.score_str()} {away.code}"
             ))
+            # 실제 결과에 맞춰 가짜 scorer/assist/appearances 생성
+            # (recap 라인차트 + 평점 시스템이 비어있지 않게)
+            self._fabricate_player_events(res, match_id)
             # record_result가 후속 처리 + 재귀적으로 다음 real 주입
             self.record_result(match_id, res)
             return  # 재귀가 나머지 처리
+
+    def _fabricate_player_events(self, res: MatchResult, match_id: str):
+        """실제 결과 주입 시 — 스코어에 맞춰 그럴듯한 선수 이벤트 생성.
+        appearances/player_goals/player_assists/player_ratings 채움."""
+        # match_id 별 결정적 RNG → 같은 시드 + 같은 real_results 면 결과 동일
+        rng = random.Random(self.seed * 7919 + hash(match_id) % 1_000_003)
+        # 골 분배 가중치: FWD 우선 → MID → DEF 가끔 → GK 극히 희귀
+        SCORER_W = {'FWD': 0.62, 'MID': 0.28, 'DEF': 0.09, 'GK': 0.01}
+        # 어시 분배: MID 우선 → FWD → DEF 가끔
+        ASSIST_W = {'MID': 0.48, 'FWD': 0.36, 'DEF': 0.14, 'GK': 0.02}
+
+        def pick_starting_xi(team) -> list:
+            """rating 높은 순으로 1 GK / 4 DEF / 3 MID / 3 FWD."""
+            pools = {'GK': [], 'DEF': [], 'MID': [], 'FWD': []}
+            for p in team.squad:
+                if p.role in pools:
+                    pools[p.role].append(p)
+            for role in pools:
+                pools[role].sort(key=lambda p: -p.rating)
+            target = {'GK': 1, 'DEF': 4, 'MID': 3, 'FWD': 3}
+            xi = []
+            for role, n in target.items():
+                xi.extend(pools[role][:n])
+            return xi
+
+        def pick_by_weight(xi: list, weights: dict, exclude: str = '') -> str:
+            cands = [p for p in xi if p.name != exclude]
+            if not cands:
+                return ''
+            ws = [weights.get(p.role, 0.05) * (1.0 + 0.4 * (p.rating - 75) / 20)
+                  for p in cands]
+            total = sum(ws)
+            if total <= 0:
+                return cands[0].name
+            r = rng.random() * total
+            acc = 0.0
+            for p, w in zip(cands, ws):
+                acc += w
+                if r <= acc:
+                    return p.name
+            return cands[-1].name
+
+        home_xi = pick_starting_xi(res.home)
+        away_xi = pick_starting_xi(res.away)
+
+        for p in home_xi:
+            res.appearances.append((0, p.name, p.role, p.rating, p.is_star))
+        for p in away_xi:
+            res.appearances.append((1, p.name, p.role, p.rating, p.is_star))
+
+        # 골 분배 + 어시 (70% 확률) 부여
+        for team_idx, n_goals, xi in [(0, res.home_goals, home_xi),
+                                       (1, res.away_goals, away_xi)]:
+            for _ in range(n_goals):
+                scorer = pick_by_weight(xi, SCORER_W)
+                if not scorer:
+                    continue
+                key = (team_idx, scorer)
+                res.player_goals[key] = res.player_goals.get(key, 0) + 1
+                # 어시 70%
+                if rng.random() < 0.70:
+                    assister = pick_by_weight(xi, ASSIST_W, exclude=scorer)
+                    if assister:
+                        akey = (team_idx, assister)
+                        res.player_assists[akey] = res.player_assists.get(akey, 0) + 1
+
+        # ── 평점 — Phase 2 와 비슷한 분포로 가짜 stats 포함 생성 ──
+        ratings = {}
+        for ti, name, role, rating, is_star in res.appearances:
+            ratings[(ti, name)] = 6.0
+        # 골/어시
+        for (ti, name), goals in res.player_goals.items():
+            ratings[(ti, name)] = ratings.get((ti, name), 6.0) + goals * 1.4
+            # 골 1개당 슛 1개(on-target) → +0.10
+            ratings[(ti, name)] += goals * 0.10
+        for (ti, name), assists in res.player_assists.items():
+            ratings[(ti, name)] = ratings.get((ti, name), 6.0) + assists * 0.8
+
+        # 팀별로 추가 가짜 슛/세이브/태클 분배
+        for ti in (0, 1):
+            team_goals = res.home_goals if ti == 0 else res.away_goals
+            opp_goals = res.away_goals if ti == 0 else res.home_goals
+            # 팀 추가 슛 — 골 외에 4~9개 더 시도 (off-target 위주)
+            extra_shots = rng.randint(4, 9)
+            fwds_mids = [a for a in res.appearances
+                          if a[0] == ti and a[2] in ('FWD', 'MID')]
+            for _ in range(extra_shots):
+                if not fwds_mids:
+                    break
+                a = rng.choices(
+                    fwds_mids,
+                    weights=[(2.0 if x[2] == 'FWD' else 1.0) for x in fwds_mids]
+                )[0]
+                on_target = rng.random() < 0.32
+                ratings[(a[0], a[1])] += (0.10 if on_target else 0.04)
+            # GK 세이브 — 상대 골 + 2~5개 추정. 실점 0이면 더 활약
+            gk = next((a for a in res.appearances
+                       if a[0] == ti and a[2] == 'GK'), None)
+            if gk is not None:
+                est_saves = rng.randint(2, 5) + (1 if opp_goals == 0 else 0)
+                ratings[(gk[0], gk[1])] += est_saves * 0.20
+            # DEF/MID 태클 — 팀당 4~9개 (수비 활동)
+            defs = [a for a in res.appearances
+                    if a[0] == ti and a[2] in ('DEF', 'MID')]
+            extra_tackles = rng.randint(4, 9)
+            for _ in range(extra_tackles):
+                if not defs:
+                    break
+                a = rng.choices(
+                    defs,
+                    weights=[(1.5 if x[2] == 'DEF' else 1.0) for x in defs]
+                )[0]
+                ratings[(a[0], a[1])] += 0.12
+
+        # GK 실점 페널티 + 클린시트
+        for ti, name, role, rating, is_star in res.appearances:
+            if role != 'GK':
+                continue
+            conceded = res.away_goals if ti == 0 else res.home_goals
+            ratings[(ti, name)] -= conceded * 0.2
+            if conceded == 0:
+                ratings[(ti, name)] += 1.0
+
+        # 팀 결과(승/무/패) 미세 보정 — Phase 2 와 일관성을 위해 X
+        # clamp
+        res.player_ratings = {k: max(4.0, min(10.0, v)) for k, v in ratings.items()}
+        # MVP — 가짜 결과의 평점 최고
+        if res.player_ratings:
+            (mvp_ti, mvp_name), mvp_r = max(res.player_ratings.items(),
+                                             key=lambda kv: kv[1])
+            res.mvp = (mvp_ti, mvp_name, mvp_r)
 
     # ── 예선 결과 누적 ──────────────────────────────────
 
